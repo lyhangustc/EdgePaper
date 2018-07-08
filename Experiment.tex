@@ -1,17 +1,27 @@
 \section{Experiment}
 We propose Conditional Self-attention Generative Adversarial Networks (CSGANs), which translate images from one domain to another being able to capture long range dependencies and reserve the global structures. To demonstrate the effectiveness of our framework, we have performed x sets of experiments. >>>>> A brief introduction of these experiments <<<<< 
+\subsection{Implementation Details}
 \subsection{Dataset}
-xxx
+We evaluation our method with the task of translating edge maps to natural images, e.g. the target images are natural images while the conditional images are corresponding edge maps. The natural images of the dataset we used are face images of CelebA dataset \cite{CelebA}, which  is a large-scale face attributes dataset with more than 200K celebrity images. Faces are of well-defined structure of eyes, noses, mouths, and etc., therefore the artifacts are visually sensitive for observers. We utilize the cropped and aligned version of dataset with the size of every images being $218\times 178$. The face attributes are attached in the dataset but not included in our experiments. 
+
+The edge maps we use generated in the pipeline similar to that used in pix2pix paper. Specifically, the binary edge maps are firstly extracted using a deep edge detector named holistically-nested edge detect (HED) \cite{HED}. And then several steps of post-processing is conducted to obtain simpler and clearer edge maps with fewer edge fragments, including thinning, short edge removal, and erosion. In addition, since the edge maps are very sparse, we add one more step to the process to decrease the sparsity of the edge maps. We calculate an unsigned euclidean distance field for each edge map to obtain a dense representation. We note that similar idea of distance filed representations can be found in some recent works \cite{xx, xx, SketchyGANs}. In section \ref{label}, we will prove the advantages of the distance fields by experiments.
+
+>>>> data split? <<<<
 %
 %
 \subsection{ Evaluation Metrics}
-The evaluation of generative images is a complicated task, because the model with good performance with respect to one criterion need not imply good performance with respect to the other criteria \cite{evaluation, GANs_equal}. Since the goal of image-to-image translation is to generate from the conditional image an corresponding image visually plausible to human, we mainly evaluate the results of different models by user studies. In addition, we use two popular criteria, Inception Scroee (IS) and Frèchet Inception Distance (FID) to prove the effectiveness of the proposed method.
+The evaluation of generative models is a open and complicated task, because the model with good performance with respect to one criterion need not imply good performances with respect to the other criteria \cite{evaluation, GANs_equal}. Traditional metrics, such as pixel-wise mean-squared error do not present the joint statistics of the synthesized samples and therefore is not able to evaluation the performance to a conditional generated model. 
+Inception Score (IS) \cite{IS} is a widely-used criterion. IS has been pointed out to have serious limitations that it focuses more on the recognizability of the generated images rather than realism of details or intra-class diversity \cite{evaluation}. However, IS is evaluation metrics for class-aware task which is not suitable for our experiments. 
+Since the goal of image-to-image translation is to generate from the conditional image an corresponding image visually plausible to human, we mainly compare the results between different models by perceptual user studies. 
+In addition, we use anther popular criterion, Frèchet Inception Distance (FID) \cite{FID}, to prove the effectiveness of proposed method quantitatively. 
 \subsubsection{User Study}
-xxx
-\subsubsection{Inception Sore}
-xxx
-\subsubsection{Frèchet Inception Distance (FID)}
-xxx
+% with/without the option "equally well"
+% present the images in one second or in unlimited time (select in unlimited time)
+% two setting: unlimited time=>which one is better, limited time=>how long to find the advantage of the proposed method
+We utilize perceptual user study experiments to compare the generated samples between different models. In every trial, we randomly select a conditional image from the testing dataset and generate two synthesized images from two methods that are going to be compared with each other. These three images are displayed side by side, and the user is asked to pick one from the two synthesized images within unlimited time based on "which is more realistic and matches the conditional image better". The options offered to users are two of the synthesized images (and "equally well"). No feedback is provided after every trial to avoid misguiding the user's perceptual judgment and preference. About 00 users participate the experiments, and 00 trials are provided to every user. 
+\subsubsection{Fr\'echet Inception Distance (FID)}
+Fr\'echet Inception Distance (FID) \cite{FID} is a recently proposed and widely used evaluation metric for generative models, which is shown to be consistent with human perceptual evaluation in assessing the realism and variation of generated samples. FID uses an Inception network to extract features and calculates the Wasserstein-2 distance between features of the generated images and the real images. Models with lower FID values are supposed to model a synthetic distribution closer to the real distribution. We inference each model with the conditional images in the testing set to get the generated samples, and calculate the FID with respect to the target images in the testing set.
 %
 %
-\subsection{title}
+\subsection{Comparison with pix2pix}
+\subsection{Ablation study}
