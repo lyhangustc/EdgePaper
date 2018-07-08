@@ -56,5 +56,6 @@ where $\gamma$ is set to $0$ at the beginning of the training process.This is be
 The discriminator pix2pix uses is a patch-wise dicriminator \cite{PatchGANs}, which distinguishes the real/synthesized images patch by patch with in a local receptive field much smaller than the size of the input images, and averages all responses to provide the ultimate output of $D$. This is based on the assumption of independence between pixels separated by more than a patch diameter. However, since the structure of the conditional image are global information across image, we add another global discriminator $D_g$ with a receptive field as large as the entire image to capture the global structure information. The patch discriminator $D_p$ and the global discriminator $D_g$ share weights in first few layers since the lower features of these discriminators should be the same, as shown in Figure \ref{fig:discriminators}.
 %
 %
-\subsection{Architecture Details}
-xxx
+\subsection{Architecture}
+Our architecture is based on the architecture of the pix2pix method which use a convolution-based U-Net \cite{Unet} as its generator and a patch-wise discriminator. We add the proposed a CSM after every convolutional layers to the generator except the first and last ones. CSMs are able to access the information of the conditional image directly and model the long rang dependencies across images and feature maps. Also, we switch the patch-wise discriminator into the proposed multiple level patch discriminator to enable the discriminator network to capture both global and local information and therefore guide the generator to generator images with more structural layout.  
+Figure \ref{fig:} shows the 
