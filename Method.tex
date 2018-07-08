@@ -57,5 +57,6 @@ The discriminator pix2pix uses is a patch-wise dicriminator \cite{PatchGANs}, wh
 %
 %
 \subsection{Architecture}
+% add CSMs to discriminator or not? if not, why? (GPU memory budget limited)
 Our architecture is based on the architecture of the pix2pix method which use a convolution-based U-Net \cite{Unet} as its generator and a patch-wise discriminator. We add the proposed a CSM after every convolutional layers to the generator except the first and last ones. CSMs are able to access the information of the conditional image directly and model the long rang dependencies across images and feature maps. Also, we switch the patch-wise discriminator into the proposed multiple level patch discriminator to enable the discriminator network to capture both global and local information and therefore guide the generator to generator images with more structural layout.  
 Figure \ref{fig:} shows the 
