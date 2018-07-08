@@ -1,0 +1,32 @@
+\section{Related work}
+Our work is based on generative adversarial networks (GANs)~\cite{GAN} in a conditional setting. In this section, we present related research in GANs.
+\subsection{Generative Adversarial Networks}
+Generative adversarial networks (GANs) \cite{GANs} have obtained a great success in recent years.
+A classical architecture of GANs contains a generator network and a discriminator network. The task of the generator take a noise vector as input and generate samples indistinguishable from the real ones, while the discriminator, in opposite, attempt to find out whether its input is real or synthesized. The minmax game played by these two networks guides the generated distribution to be similar to the real data distribution. 
+%
+Many recent works extent GANs to a wide range of applications, such as image generation [1, 42, 62], representation learning [45], image manipulation [64], object detection [33], and video applications [38, 51, 54]. 
+
+\subsection{Conditional Generative Adversarial Networks}
+Conditional GANs were firstly introduced by \cite{CGAN} who treated the conditional generation problem as the inverse processing of image classification and used discrete labels as condition to generate images. Previous works have explored GANs generating images in the condition of discrete labels~\cite{CGAN}, text~\cite{Reed2016} and images.
+%
+\cite{Dosovitskiy2014} trained convolutional networks to generate images of objects given object style, viewpoint and color. With the experiments of interpolating viewpoints, they showed that networks learn a meaningful representation of 3D models. 
+%
+\cite{Reed2016} generated photo-realistic images conditioned on text descriptions. 
+%
+Our work utilize GANs in a conditional setting to generate images from images.
+
+
+\subsection{Image-to-image translation with GANs}
+Given an image in one domain, image-to-image translation methods generate a corresponding image in another. These two images are possible representations of the same scene or object. Image-to-image translation with GANs is a special case of conditional GANs where images are applied to be conditions. 
+%
+
+\cite{pix2pix}, called pix2pix, firstly introduced the concept of image-to-image translation, who treated one image in a paired image dataset as conditioned input and generate its corresponding image. 
+%Unlike prior works which dealt with only one application, \cite{pix2pix} are able to handle multiple applications in one frame work only switching training datasets. 
+Pix2pix applies skip connections \cite{Unet} between mirrored layers in the generator to make sure low-level information pass through its encoder-decoder architecture and uses patch discriminators \cite{PatchDicriminator} to increase the performance of the generator. >>>Discuss the shortage of pix2pix<<<
+%
+\cite{UNIT} studied on unpaired image-to-image translation by training a two-branch GAN. Each branch is composed with a encoder, a generator and a discriminator. With the idea that high-level representation of a pair of corresponding images in two domains should be the same, high-level layers share weights between two branches in encoders, generators and discriminators. 
+%
+CycleGAN~\cite{CycleGAN}, DiscoGAN~\cite{DiscoGAN} and DualGAN~\cite{DualGAN} developed similar architectures to translate unpaired images which contain, for each, two generators and two discriminators. These methods learn two mappings in an adversarial training process such that an input image in one domain is mapped to a generated image in another, and then the generated image is mapped to a reconstructed image which is closed to the input image in some measures. These methods shared the same idea that since the generated image is able to reconstruct the input image, it should contain the content of the input image. >>>>discuss the different between supervised and unsupervised methods<<<<<
+
+\subsection{Attention mechinism}
+>>>>>> Not familiar yet. <<<<<<<<<

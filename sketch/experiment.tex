@@ -1,0 +1,115 @@
+\section{SketchingAPhoto Exploration}
+Based on the image-image translation work, we can link hand-drawn sketch to edge map first, and then generate photo from the edge map. Step 1: retrieve similar edge maps by the input sketch; Step 2: generate images from the retrieved edge map.
+\subsection{Linking sketches to edge maps}
+The idea of linking a sketch to an edge map can be treated as either a sketch-based edge maps retrieval problem or a sketch-based edge maps generation problem .
+\paragraph{Sketch-based edge maps retrieval}
+If we have edge maps to be retrieved, we must have their corresponding images.Since sketch-based image/photo retrieval is well studied, we can separate sketch-based edge maps retrieval into two part: sketch-based image retrieval and edge detection. \cite{SketchMeThatShoe} is an instance-level sketch-based image retrieval method using a novel data augmentation technique and a pre-trained triplet convolutional neural network (Figure~\ref{reported_sketchmethatshoe}). On a newly collected chairs-sketches dataset, top-1 accuracy is $69.07\%$ and top-10 accuracy is $97.94\%$. On another dataset of shoes and sketches, top-1 accuracy is $39.13\%$ and top-10 accuracy is $87.83\%$. An edge detection algorithm will be introduced in next subsection. To test this idea, we are training an edge2shoe translation model.
+\paragraph{Sketch-based edge maps generation}
+Sketch-based edge maps generation is a special case of image-to-image translation or style transfer, while in this case, both sketches and edge maps are lack of textures and colors, which might make this task more challenging. 
+To be explored...
+
+\begin{figure}
+	\includegraphics[width=\textwidth]{figures/pix2pix/reported_sketchmethatshoe}
+	\caption{\label{reported_sketchmethatshoe}Reported Ranking examples using different compared models. The true matches are highlighted in green. Results on last row are of \cite{SketchMeThatShoe}}
+\end{figure}
+
+\subsection{Edge map to photo translation}
+Pix2pix~\cite{pix2pix} introduced an algorithm to train a GAN-based model with image pairs to translate an image in one domain to a corresponding in another. Edge-to-photo translation is one of its applications, which needs to train the model with photos of the same category and their edge maps. We examined this method on tasks of edge2cat, in which we use a set of cat photos and corresponding edge maps to train the model. Hyper-parameters are all the same as the reported in the pix2pix paper.
+\subsubsection{Details}
+\paragraph{Dataset}
+We downloaded 1831 photo images of the cat category from ImageNet~\cite{ImageNet} as our photo images denoted as target in experiments and split them randomly into a training set with 1464 images and testing set with 367 images. These images are cropped to the size of $256\times 256$. And then we extracted the edge maps of these images using holistically-nested edge detection (HED) as suggested by pix2pix. 
+\paragraph{Edge Detection}
+HED is a new edge detection algorithm, which performs image-to-image prediction by means of a deep learning model that leverages fully convolutional neural networks and deeply-supervised nets. HED automatically learns rich hierarchical representations (guided by deep supervision on side responses) that are important in order to resolve the challenging ambiguity in edge and object boundary detection. Given an image, HED outputs a prediction matrix with the same size of the input image, each element of which indicates the edge probabilities of corresponding pixel of the input image ranging $[0, 1]$. We generated two kinds of edge maps based on the prediction matrices. 1) Gray-scale edge maps: we scale values of prediction matrices to integers from $0$ to $255$. 2)Binary edge maps: post-processing is conducted to remove short edges and convert HED edge maps to be binary.
+\paragraph{Performance}
+We compared results of edge2cat (Figure~\ref{pix2pix_edge2cat}) with the reported results. The results on edge2cat, which can easily be distinguished from realistic photos, are not as good as those on edge2handbag (Figure~\ref{pix2pix_edge2handbag}) and edge2shoe (Figure~\ref{pix2pix_edge2shoe}). It seems to be because that the criteria of realistic on cats are more rigid than those on handbags and shoes, especially around the eyes of cats. Also the backgrounds of cat images bring more challenges while in the shoes and handbag images the backgrounds are all white, which make the edge maps of cats much more complicated and edge2cat model harder to train. Moreover, compared to the results of edge2cat posed on the git repository (Figure~\ref{pix2pix_reported_edge2cat}), the model we trained fails to generate eyes of cats. 
+\subsection{Discussion}
+We now have at least three paths to achieve our goal of sketching a photo. 
+\paragraph{Sketch-based edge maps retrieval plus edge2photo translation}
+Given some well-studied fruits such as sketch-based image retrieval and edge2photo translation, this method might be the easiest one compared to the other two. However, it is uncomfortable to me .
+To be simple, this method can be described as "sketch--retrieved image--edge map--generated photo". 
+The motivation seems not clear. It seems the generated photo should be the same as the retrieved image. If someone wants to get the generated photo, the retrieved image might be what he wants. 
+\paragraph{Sketch-based edge maps generation plus edge2photo translation}
+We have not explored this path. As discussed above, both sketches and edge maps are lack of textures and colors. Due to high intra-class variation and iconic style, the semantic information might be harder to extract. The HED algorithm might give us some hints. More survey is needed.
+\paragraph{Sketch2photo translation}
+An photo generation method conditioned on sketched with/without the help of edge maps. It should more challenging. This will be explored in next subsection.
+
+
+
+\begin{figure}
+	\includegraphics[width=0.5\textwidth]{figures/pix2pix/reported_edge2handbag}
+	\caption{\label{pix2pix_edge2handbag}Reported results on edge2handbag of pix2pix.}
+\end{figure}
+\begin{figure}
+	\includegraphics[width=0.5\textwidth]{figures/pix2pix/reported_edge2shoe}
+	\caption{\label{pix2pix_edge2shoe}Reported results on edge2shoe of pix2pix.}
+\end{figure}
+
+\begin{figure}
+	\includegraphics[width=0.5\textwidth]{figures/pix2pix/reported_sketch2handbag}
+	\caption{\label{pix2pix_sketch2shoeNhandbag}Reported results on sketch2handbag and sketch2shoe of pix2pix.}
+\end{figure}
+
+
+
+
+
+
+
+%\subsection{CycleGAN}
+%CycleGAN is image-to-image translation algorithm trained by unpaired images of two domains.
+%\subsubsection{Details}
+%\paragraph{Residual blocks}
+%In spired by \cite{Johnson et. al.}, in the bottleneck layers, residual blocks~\cite{ResNets} are added to transfer features of input image to features of generated image. 
+%\paragraph{Instance normalization}
+%Instance normalization is also unknown as contrast normalization. CycleGANs swap batch normalization with instance normalization in both training and testing time since we want to keep the content instead of style and contract is clearly not a part of content in the image.
+%\paragraph{Generated image pool}
+%CycleGANs discard both random vectors and dropout which introduce stochasticity in the training procedure and use the historical generated images to update the discriminators by maintaining a generated image pool with size of 50. The pool is filled with first generated 50 images and updated by replacing one of randomly selected images in it with the newly generated image.
+%%
+%\begin{figure}
+%	
+%	\includegraphics[width=0.5\textwidth]{figures/cyclegan/reported_results.jpg}
+%	\caption{\label{cyclegan_reported_results}Reported results of CycleGAN.}
+%\end{figure}
+%%
+%\begin{figure}
+%	
+%	\includegraphics[width=0.5\textwidth]{figures/cyclegan/sketch2photo_apple_200epochs_torch}
+%	\caption{\label{cyclegan_sketch2photo_apple}Results of CycleGAN on sketch-to-photo dataset of apples. Mode collapse problem is severe and reconstructed images are "almost white".}
+%\end{figure}
+%%
+%\begin{figure}
+%	\includegraphics[width=0.5\textwidth]{figures/cyclegan/sketch2photo_airplane_200epochs_torch}
+%	\caption{\label{cyclegan_sketch2photo_airplane}Results of CycleGAN on sketch-to-photo dataset of airplanes. Mode collapse problem is severe.}
+%\end{figure}
+%
+%
+%\subsubsection{Results of sketch-to-photo translation}
+%Figure~\ref{cyclegan_reported_results} shows the reported results of CycleGAN. Notice that, taking horse-to-zebra as example, only the horse in the input image rather than the whole image is translated into black and white, which is different from style transfer where the styles of both the object and background are transfered. Also, the green grass in the background is translated into brown, the color of the environments zebras live in.
+%
+%However, when we train CycleGAN with the sketch-to-photo dataset ("real\_A" and "real\_B" in figure~\ref{cyclegan_sketch2photo_apple} and ~\ref{cyclegan_sketch2photo_airplane}, results are not as good as the other. As illustrated, both models suffer from severe issue of mode collapse, a common but unsolved problem of training GANs that input images of different modes are mapped to images of the same mode in corresponding domain. Also, the edges of the input images are preserved in the generated images. This is acceptable in some application like horse-to-zebra or apple-to-orange, since the contours of the the input objects and output objects are similar to each other. However, when it comes to the sketch-to-photo, the preserving of edges is unexpected since objects in generated photos with free-hand style contours are not visually real.
+
+\subsection{Assessment of image quality}
+A straightforward metric of performance of the generated images can be the judge of human. However, this is labor-intensive. Another metric named Inception score is proposed in \cite{ImprovedTechnique} which applies Inception model to every generated image to get the conditional and marginal label distribution and uses the KL divergence between these two distributions as the metric: $exp\{\mathcal{E}_x{KL(p(y|x)||p(y))}\}$. The insight of this metric is that the conditional label distribution should have low entropy (one-hot like) because something must be detected in the input image to make it realistic, while the marginal distribution should have high entropy (uniform like) because they want various kinds of images.
+
+Since our training dataset contains images with only one class of label, we do not want the marginal distribution have high entropy. We use the entropy of the conditional label distribution 
+as the performance metric: $exp\{-\mathcal{E}_x{p(y|x)\log(p(y|x))}\}$.
+
+\subsection{Gray-scale edge map to photo translation using pix2pix}
+Given a three-channel image, HED edge detector generates a edge matrix with size as the input image, each pixel of which indicates the probability of being edge in this position of input image. And the post-processing convert the edge matrix into a binary, single-pixel thin edge using a threshold $\gamma$ and non-maximum suppression. Figure~\ref{pix2pix_edge2cat} and figure~\ref{pix2pix_edge2cat_gamma5} shows results of pix2pix trained by binary edge maps with $\gamma=25.0/255.0$ and $\gamma=5.0/255.0$ respectively. We can see that more details are kept in binary edge maps when $\gamma$ is small. 
+Also, we train pix2pix with the edge matrices which preserve all details of the edge maps but consist of thick edges. The edge matrices ranging $[0,1]$ are scale to $[0,255]$ to be gray-scale edge maps. Results are shown in figure~\ref{pix2pix_edge2cat_gray_200}. The performances measured by entropy are shown in Table~\ref{pix2pix_performance_metric}.
+
+Generated images with complicated background are much worse. We plan to remove the background of cat images with the help of semantic segmentation method. To be done.
+\begin{table}[h]
+    \centering
+    \begin{tabular}{|l|c|}\hline
+    	Generated Images&Entropy\\\hline
+    	Training photo images & $0.04463\pm 0.005545$ \\
+    	Testing photo images & $0.046676\pm 0.011504$ \\
+    	Binary edge maps, training set & $0.021293\pm 0.002039$\\
+    	Binary edge maps, testing set & $0.020027\pm 0.002985$\\
+    	Gray-scale edge maps, training set & $ 0.024702\pm 0.002125$ \\
+	    Gray-scale edge maps, testing set & $ 0.022510\pm 0.005133$ \\\hline
+    \end{tabular}
+    \caption{Performances of edge2photo using different training edge maps. }
+    \label{tab:pix2pix_performance_metric}
+\end{table}

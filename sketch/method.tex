@@ -1,0 +1,10 @@
+\section{Method}
+We propose a adversarial domain adaption framework to generate natural images from handcrafted sketches. We first review the pix2pix model as our baseline (Sec. 3.1). And then we describe how we use the adversarial domain adaptation technique to train the sketch-to-photo model with the help of a edge-to-photo pix2pix model pre-trained by augmented edge-photo dataset (Sec. 3.2). Finally, we introduce the details of our method of data augmentation.
+\subsection{The pix2pix baseline}
+The pix2pix method [?] is a conditional GAN framework for image-to-image translation. It consists of a generator G and a discriminator D. For our task, the objective of the generator G is to translate edge maps to realistic-looking images, while the discriminator D aims to distinguish real images from the translated ones. The framework operates in a supervised setting. In other words, the training dataset is given as a set of pairs of corresponding images ${(e_i, p_i)}$, where $e_i$ is an edge map and $p_i$ is a corresponding natural photo. Conditional GANs aim to model the conditional distribution of real images given the input edge maps via the following minimax game: $\min_G \max_D L_{GAN}(G,D)$, where the objective function $L_{GAN}(G,D)$ is given by
+
+....A Loss Function....
+
+The pix2pix method adopts U-Net [?] as the generator and a patch-based fully convolutional network [?] as the discriminator. The input to the discriminator is a channelwise concatenation of the edge map and the corresponding image. The resolution of the generated images is up to $256 \times 256$. We tested directly applying the pix2pix framework to generate  images from sketches, but found the training unstable and the edge-alignment phenomenon is severe. We therefore describe how we improve the 
+pix2pix framework in the next subsection.
+\subsection{Adversarial domain Adaptation}

@@ -1,0 +1,17 @@
+\section{Introduction}
+Realistic image synthesis has been a hot topic in computer vision and computer graphics for years. >>>Some traditional image generation methods<<< With the emergence of deep neural networks (DNN), several promising approaches for image synthesis have been proposed. Variational autoencoders (VAEs) \cite{VAEs} which maximize a variational lower bound on the log-likelihood of the training data. Autoregressive \cite{PixCNN} networks directly model the conditional distribution over pixels. Though generating convincing samples, these models are costly to sample from.
+
+Generative adversarial networks (GANs) \cite{GANs} offer a new and promising mechanism to generate images, which take noises vectors as input and train two networks playing minmax game to guide the generated samples to be indistinguishable from the real ones. 
+Conditional GANs are generalized versions of GANs in a conditional setting. Instead of noise vectors, cGANs generate images with different conditions, such as discrete class labels \cite{cGANs}, texts \cite{StackGANs}, and xxx. Among these conditional image generation methods, image-to-image translation has drawn a lot of attention recently, which aims to apply a source image in one domain to generate a corresponding target image in another, reserving shared concepts, objects or scenes in these two images. Since \cite{pix2pix}  raised the first image-to-image model(pix2pix), there have been a wide variety of this approach \cite{xxxxxxxx}. However, image-to-image translation models based on convolutional neural networks may have troubles to generate some classes of realistic images, especially when these images have structural constrains, for example, generating faces from corresponding edge maps (edge-to-face) >>>>add a figure to explain<<<<. The reasons behind this might be 1) that it is hard for the optimizer to discover parameter values that simulates the long range dependencies through several convolutional layers, since the convolutional operator has local receptive field \cite{SAGANs}, and 2) that the discriminator used in pix2pix models \cite{PatchGANs} focuses on examining local patches instead of capturing the global information, and therefore fails to guide the generator to synthesize the global structure of the conditional image. 
+
+Considering the first reason, we introduce a conditional self-attention mechanism to the generator of image-to-image models to address the 
+Self-attention \cite{Non-local, Attention, MachineReading, SAGAN}, which computes the response at a position as a weighted sum of the features at all positions, is able to capture the long range dependencies across different regions of images and feature maps.
+%
+For the second reason, we consider to establish the multiple patch-wise discriminators to capture information of different level. This can be achieved by modifying the loss of discriminator and not changing its architecture. We note that similar idea is raised by \cite{Multi-D} who resizes the real/fake samples and applies multiple discriminators to these multi-scale samples. 
+
+In this research, we propose Conditional Self-attention Generative Adversarial Networks (SCGANs), which translate images from one domain to another being able to capture long range dependencies and reserve the global structures. >>>> Discuss more details of the results and model <<<< Our contributions are summarized as follow:
+i) 
+ii)
+iii)
+
+The rest of this article is organized as follow. Related works are presented in Section >>>> more detail <<<<<

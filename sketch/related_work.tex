@@ -1,0 +1,29 @@
+
+\section{Related work}
+\subsection{Sketch}
+Sketches has been well studied in past years. \cite{HowToSketch} released a large sketch dataset with 20K sketches in 250 categories and proposed a sketch classigfication method based on a bag-of-feature sketch representation and multi-class support vector machines. 
+%
+\cite{SketchANet} achieved a sketch classification performance surpassing that of humans by developing two data augmentation strategies to significantly increase the volume and diversity of sketches and exploring different network ensemble fusion strategies to improve the classification performances.
+\cite{Sketch3DShape} introduced a sketch-based 3D shape retrieval method that trained two siamese convolutional neural networks to learning the views for 3D shape and the sketches.
+Unlike works prior to it which have retrieved images in the same category of the query sketch, \cite{SketchMeThatShoe} addressed a fine-grained sketch-based image retrieval problem that required instance-level retrieval of images. They trained a siamese networks with a newly collected dataset of sketch-photo pairs and applied staged pre-training and fine-tuning.
+
+\subsection{Conditional Generative Adversarial Networks}
+Our work is based on generative adversarial networks (GANs)~\cite{GAN} in conditional setting. 
+
+Previous works have explored GANs generating images in the condition of discrete labels~\cite{CGAN}, text~\cite{Reed2016} and images. 
+Conditional GANs were firstly introduced by \cite{CGAN} who treated the conditional generation problem as the inverse processing of image classification and used discrete labels as condition to generate images.
+%
+\cite{Dosovitskiy2014} trained convolutional networks to generate images of objects given object style, viewpoint and color. With the experiments of interpolating viewpoints, they showed that networks learn a meaningful representation of 3D models. 
+%
+\cite{Reed2016} generated photo-realistic images conditioned on text descriptions.
+
+\subsection{Image-to-image translation with GANs}
+Given an image in one domain, image-to-image translation methods generate a corresponding image in another. These two images are possible representations of the same scene. Image-to-image translation with GANs is a special case of conditional GANs where images are applied to be conditions. 
+%
+
+\cite{pix2pix} firstly introduced the concept of image-to-image translation, who treated one image in a paired image dataset as conditioned input and generate its corresponding image. Unlike works prior to it which dealt with only one application, \cite{pix2pix} are able to handle multiple applications in one frame work only switching training datasets. They applied skip connections between mirrored layers in the generator to make sure low-level information pass through its encoder-decoder architecture and used dropout in stead of random vector to provide stochasticity in the networks.
+%
+\cite{UNIT} studied on unpaired image-to-image translation by training a two-branch GAN. Each branch is composed with a encoder, a generator and a discriminator. With the idea that high-level representation of a pair of corresponding images in two domains should be the same, high-level layers share weights between two branches in encoders, generators and discriminators. 
+%
+
+CycleGAN~\cite{CycleGAN}, DiscoGAN~\cite{DiscoGAN} and DualGAN~\cite{DualGAN} developed similar architectures to translate unpaired images which contain, for each, two generators and two discriminators. These methods learn two mappings in an adversarial training process such that an input image in one domain is mapped to a generated image in another, and then the generated image is mapped to a reconstructed image which is closed to the input image in some measures. These methods shared the same idea that since the generated image is able to reconstruct the input image, it should contain the content of the input image.

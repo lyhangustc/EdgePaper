@@ -1,0 +1,17 @@
+\section{Introduction}
+Image-to-image translation has drawn a lot of attention recently, which aims to apply an image in one domain to generate a corresponding image in another, reserving shared concepts, objects or scenes in these two images. In many applications such as movie making, public security, and so on, virtual images are desired from sketches describing the target object. Typically, an interactive process is employed to generate images, collect feedbacks, and then providing more information to keep updating the output image.
+
+Generating a corresponding image from an input image can be reformulated as a conditional image generation problem which is conditioned on the input image. Previous works about conditional image generation problem focused on generating images from discrete labels~\cite{CGAN}, texts~\cite{Reed2016} and images.
+\cite{pix2pix} firstly introduced the concept of image-to-image translation and trained a framework in a supervised setting by paired images to handle multiply applications, such as labels to street scene, day to night, edge to photo and etc., only switching the training datasets.
+Different from the task of translating edge maps to photos, our sketch-to-photo task has several new challenges. 
+1) The handcrafted sketches are iconic, which makes understanding sketches need more experience and imaginary. 
+2) People with different levels of art may draw sketches with different levels of details. 
+3) Techniques of generating sketches from photos are not as mature as edge detection, a large amount of supervised pairs of sketch and photo are not able to acquired, which disable the direct training of sketch-to-photo generating model.
+%  句式不一致
+4) The previous works share a common shortage that the generated images always reserve the edges of the input edge maps, making the generation process become a recoloring one. However, sketch-to-photo task requires that the generated photo preserves the structure and attributions of the input sketch rather than the edges.
+
+To address these problems, we propose a data augmentation schedule and a novel GAN architecture in a domain adaptation setting. 
+We augment our sketch-photo dataset with three kinds of edge detection techniques to gather a large set of pairs of a photo and its corresponding edge map and pre-train our GAN model with these edge-photo pairs. And then we treat our task as a adversarial domain adaptation one.
+Previous works on domain adaptation techniques either attempt to learn an extra mapping layer to reduce domain representation gap [?] or learn domain invariant representations by simultaneously adapting for both source and target domains [?]. In contrast to classification-based approaches, there are very few works focusing on spatially structured prediction tasks [?]. [?] shows the inefficiency of classification-based approaches on such tasks, mostly because of the higher dimensional feature space. 
+
+

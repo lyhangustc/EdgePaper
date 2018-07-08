@@ -1,0 +1,60 @@
+\section{Method}
+In this research, we propose Conditional Self-attention Generative Adversarial Networks (CSGANs), which translate images from one domain to another being able to capture long range dependencies and reserve the global structures. We first review the pix2pix model as our baseline (Sec. 3.1). And then we introduce the Conditional Self-attention Module (SCM) (Sec. 3.2). Finally, we describe the idea of multiple level patch discriminator and the loss we utilize to achieve this idea.
+\subsection{Preliminary}
+The pix2pix [?] is a image-to-image translation framework based on conditional GANs, which trains a generator network $G$ and a discriminator network $D$. The generator $G$ takes as input conditional images and outputs corresponding target images, while the discriminator $D$ aims to distinguish real images from the synthesized ones. Formally, to train these two networks in a supervise manner, a set of pairs of corresponding images is required as training set ${(x_i, y_i)}$, where $x_i$ is a source image and $y_i$ is a corresponding target image. These two networks play a minmax game:
+\begin{equation}
+\label{eqn:minmax_game}
+\min_G \max_D L_{adv}(G,D) >>>L1 loss<<<
+\end{equation}
+to guide the generator to model the conditional distribution of real images given the source images, where the adversarial loss function is generally given by 
+\begin{equation}
+\label{eqn:loss_adv}
+E_{s\sim p_{data}(x)}[\log D(x,y)]+E_{(x,y)\sim p_{data}(x,y)}[\log(1-D(x,G(x)))]
+\end{equation}
+The generator of pix2pix is a convolution-based U-Net \cite{Unet}, the input of which is only applied to the first layer. The discriminator is patch-wise discriminator introduced by PatchGANs \cite{PatchGANs}. The conditional image is concatenated channel-wisely to the synthesized image or real image as the input of the discriminator.
+>>>> show the loss implementation in PatchGANs <<<<<
+
+\subsection{Conditional Self-Attention Module (CSM)}
+Since convolution operation focuses on local receptive field and have to capture the long rang dependencies across the entire image through several layers, which is computationally inefficiently. Inspired by \cite{non-local} and \cite{SAGANs}, we introduce a conditional self-attention module (CSM) to the convolution-based pix2pix framework in order to capture the long rang dependencies of images and feature maps, as shown in Figure \ref{label}
+
+Given the image features from the previous hidden layer $a\in \mathcal{R}^{C\times M}$, we first resize the conditional image $x\in \mathcal{R}^{3\times N}$ to  $x_a\in \mathcal{R}^{3\times M}$ and concatenate the resized conditional image to the image feature to get $[a, x_a]$ as conditioned features, where $[\cdot,\cdot]$ is the concatenation operation. This allows the information of conditional image to convey to every attention module and guide the network to focuses on important regions directly based on the conditional image.
+%
+Then the conditioned features are mapped into three feature space by
+\begin{equation}
+\label{eqn:f}
+f([a, x_a])=W_f[a, x_a],
+\end{equation}
+\begin{equation}
+\label{eqn:g}
+g([a, x_a])=W_g[a, x_a],
+\end{equation}
+\begin{equation}
+\label{eqn:h}
+h([a, x_a])=W_h[a, x_a],
+\end{equation}
+where $W_f, W_g\in \mathcal{R}^{\hat{C}\times (C+3)}$, $W_h\in \mathcal{R}^{(C+3)\times C}$ are trainable weights, which are implemented by $1\times 1$ convolutions. Here, we use $\hat{C}=C/16$ in our experiments. 
+%
+Let $\beta_{j,i}$ be the indicator that indicates the extent to which the model attends to the $i^{th}$ location when synthesizing the $j^{th}$ region, which is calculated by 
+\begin{equation}
+\label{eqn:beta}
+\beta_{j,i}=\frac{exp(s_{ij})}{\sum^M_{i=1}exp(s_{ij})}
+\end{equation}
+where $s_{ij}=f([a, x_a])^Tg([a, x_a])$. Next, we use $\beta_{j,i}$ as the attention weights and compute the response $r=(r_1, r_2,\dot, r_M)\in \mathcal{R}^{\times M}$ at every position as a weighted sum of the features at all positions, where
+\begin{equation}
+\label{eqn:response}
+o_j=\sum^M_{i=1}\beta_{j,i}h([a, x_a]).
+\end{equation}
+As suggested in \cite{SAGANs}, we further multiply the response of the attention layer by a scale parameter $\gamma$ and add back to the input feature maps. The final output is calculated by 
+\begin{equation}
+\label{eqn:output}
+o_i=\gamma r_i+a_i,
+\end{equation}
+where $\gamma$ is set to $0$ at the beginning of the training process.This is because at the early stage of training process, the networks are able to learn the local dependencies, and then learn the long rang dependencies by assign more weight to the non-local evidence progressively.
+%
+%
+\subsection{Multiple Level Patch Discriminator}
+The discriminator pix2pix uses is a patch-wise dicriminator \cite{PatchGANs}, which distinguishes the real/synthesized images patch by patch with in a local receptive field much smaller than the size of the input images, and averages all responses to provide the ultimate output of $D$. This is based on the assumption of independence between pixels separated by more than a patch diameter. However, since the structure of the conditional image are global information across image, we add another global discriminator $D_g$ with a receptive field as large as the entire image to capture the global structure information. The patch discriminator $D_p$ and the global discriminator $D_g$ share weights in first few layers since the lower features of these discriminators should be the same, as shown in Figure \ref{fig:discriminators}.
+%
+%
+\subsection{Architecture Details}
+xxx
