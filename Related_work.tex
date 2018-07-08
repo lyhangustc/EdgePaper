@@ -25,7 +25,7 @@ Given an image in one domain, image-to-image translation methods generate a corr
 
 The pix2pix method \cite{pix2pix} firstly introduced the concept of image-to-image translation. Pix2pix is train in a supervised manner, where the training dataset is a set of paired images. 
 %Unlike prior works which dealt with only one application, \cite{pix2pix} are able to handle multiple applications in one frame work only switching training datasets. 
-Pix2pix applies skip connections \cite{Unet} between mirrored layers in the generator to make sure low-level information pass through its encoder-decoder architecture and uses patch discriminators \cite{PatchDicriminator} to increase the performance of the generator. However, the convolution-based architecture makes it difficult to discover the long range dependencies across the images and feature maps, and the patch-wise discriminator is not able to ensure the global structure information to be well capture by the model.
+Pix2pix applies skip connections \cite{Unet} between mirrored layers in the generator to make sure low-level information pass through its encoder-decoder architecture and uses patch discriminators \cite{PatchDicriminator} to increase the performance of the generator. However, the convolution-based architecture makes it difficult to discover the long-range dependencies across the images and feature maps, and the patch-wise discriminator is not able to ensure the global structure information to be well capture by the model.
 %
 In addition to pix2pix, many image-to-image tasks \cite{See pix2pixHD} are trained in a supervised manner. 
 \cite{CascadedGANs, pix2pixHD} used coarse-to-fine refinement frameworks to synthesis photographic images from semantic label maps. 
@@ -38,7 +38,7 @@ Image-to-image translation has also been well-studied in an unsupervised setting
 %
 CycleGAN~\cite{CycleGAN}, DiscoGAN~\cite{DiscoGAN} and DualGAN~\cite{DualGAN} developed similar architectures to translate unpaired images which contain, for each, two generators and two discriminators. These methods learn two mappings in an adversarial training process such that an input image in one domain is mapped to a generated image in another, and then the generated image is mapped to a reconstructed image which is closed to the input image in some measures. These methods shared the same idea that since the generated image is able to reconstruct the input image, it should contain the content of the input image. 
 
-Our work focuses on translating face images from corresponding edge maps in a supervised setting, which is able to learn the long range dependencies and global structure across image.
+Our work focuses on translating face images from corresponding edge maps in a supervised setting, which is able to learn the long-range dependencies and global structure across image.
 
 \subsection{Attention mechinism}
 >>>>>> To be edited <<<<<<<<<
