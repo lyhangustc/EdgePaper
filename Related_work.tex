@@ -2,31 +2,44 @@
 Our work is based on image-to-image translation frameworks, which are variants of GANs in a conditional setting. In this section, we present related research in GANs, conditional GANs, and image-to-image translation models. We also give a brief review on recently proposed attention models.
 \subsection{Generative Adversarial Networks (GANs)}
 Generative adversarial networks (GANs) \cite{GANs} have obtained a great success in recent years.
-A classical architecture of GANs contains a generator network and a discriminator network. The task of the generator take a noise vector as input and generate samples indistinguishable from the real ones, while the discriminator, in opposite, attempt to find out whether its input is real or synthesized. The minmax game played by these two networks guides the generated distribution to be similar to the real data distribution. 
+Based on the minmax game theory, a classical architecture of GANs contains a generator network and a discriminator network. The task of the generator take a noise vector as input and generate samples indistinguishable from the real ones, while the discriminator, in opposite, attempt to find out whether its input is real or synthesized. The minmax game played by these two networks guides the generated distribution to be similar to the real data distribution. Compared to other deep  framework of image generation \cite{VAEs, PixCNNs}, GANs are able to synthesize images with less blurriness and provide a more efficient process to generate samples. However, GANs suffer from several problems in the early stage, such as the instability of training and the mode collapse problem. To stabilize the training of GANs and enable GANs to generate images with high quality and large diversity, many efforts have been made. Deep convolutional GANs (DCGANs) \cite{DCGANs} first introduced a convolutional architecture which led to improved visual quality. \cite{Improved_Techniques} proposed an approach to train discriminator in a semi-supervised fashion, granting the discriminator’s internal representations knowledge of the class structure of (some fraction of) the training data it is presented. Energy based GANs (EBGANs) \cite{EBGANs}  were proposed as a class of GANs that aims to model the discriminator as an energy function. This variant converges more stably and is both easy to train and robust to hyper-parameter variations. Wasserstein distance, which acts as a loss as well as a measure of convergence in training process, is brought to GANs by \cite{WGANs, WGANs-GP} to benefit both the stability and mode coverage. Several other works \cite{LSGANs, BEGANs, DRAGANs} also make progress in stabilizing the training and increasing the diversity of the results of GANs. >>>>SAGAN??<<<<
 %
-Many recent works extent GANs to a wide range of applications, such as image generation [1, 42, 62], representation learning [45], image manipulation [64], object detection [33], and video applications [38, 51, 54]. 
 
 \subsection{Conditional Generative Adversarial Networks}
-Conditional GANs were firstly introduced by \cite{CGAN} who treated the conditional generation problem as the inverse processing of image classification and used discrete labels as condition to generate images. Previous works have explored GANs generating images in the condition of discrete labels~\cite{CGAN}, text~\cite{Reed2016} and images.
+Conditional GANs are generalized versions of GANs in a conditional setting. Instead of taking a noise vector as input, conditional GANs generating images based on the assigned conditions, modeling the conditional distribution of the samples. 
+Conditional GANs were firstly introduced by \cite{CGAN} who treated the conditional generation problem as the inverse processing of image classification and used discrete labels as condition to generate images. Previous works have explored GANs generating images based on a wide variety of conditions.
+\cite{InfoGANs, AcGANs} took both noise vectors and discrete class label as input and added a classifier task to the discriminator in two different architectures to generate images high recognizability.   
 %
 \cite{Dosovitskiy2014} trained convolutional networks to generate images of objects given object style, viewpoint and color. With the experiments of interpolating viewpoints, they showed that networks learn a meaningful representation of 3D models. 
 %
-\cite{Reed2016} generated photo-realistic images conditioned on text descriptions. 
+\cite{StackGANs, StackGANs++} generated high-resolution photo-realistic images conditioned on text descriptions in two stages, where GANs sketch the basic shapes and colors in the first stage and add details in to the generated images in the second stage.  
 %
-Our work utilize GANs in a conditional setting to generate images from images.
-
-
+Recently proposed \cite{ProjectGANs} leveraged the conditional information in a novel way, where the discriminator involves an inner product term between the condition vector and the feature vector in a middle level layer. This formulation is based on the observation that the loss function of GANs are able to be decomposed into the sum of two log likelihood ratios.
+%
+Our work utilize GANs in a conditional setting to generate images from images, which utilize the condition information directly even in the high-level layers.
+%
+%
 \subsection{Image-to-image translation with GANs}
 Given an image in one domain, image-to-image translation methods generate a corresponding image in another. These two images are possible representations of the same scene or object. Image-to-image translation with GANs is a special case of conditional GANs where images are applied to be conditions. 
 %
 
-\cite{pix2pix}, called pix2pix, firstly introduced the concept of image-to-image translation, who treated one image in a paired image dataset as conditioned input and generate its corresponding image. 
+The pix2pix method \cite{pix2pix} firstly introduced the concept of image-to-image translation. Pix2pix is train in a supervised manner, where the training dataset is a set of paired images. 
 %Unlike prior works which dealt with only one application, \cite{pix2pix} are able to handle multiple applications in one frame work only switching training datasets. 
-Pix2pix applies skip connections \cite{Unet} between mirrored layers in the generator to make sure low-level information pass through its encoder-decoder architecture and uses patch discriminators \cite{PatchDicriminator} to increase the performance of the generator. >>>Discuss the shortage of pix2pix<<<
+Pix2pix applies skip connections \cite{Unet} between mirrored layers in the generator to make sure low-level information pass through its encoder-decoder architecture and uses patch discriminators \cite{PatchDicriminator} to increase the performance of the generator. However, the convolution-based architecture makes it difficult to discover the long range dependencies across the images and feature maps, and the patch-wise discriminator is not able to ensure the global structure information to be well capture by the model.
 %
+In addition to pix2pix, many image-to-image tasks \cite{See pix2pixHD} are trained in a supervised manner. 
+\cite{CascadedGANs, pix2pixHD} used coarse-to-fine refinement frameworks to synthesis photographic images from semantic label maps. 
+\cite{pix2pixHD-25} studied the generating images of outdoor scenes from semantic label maps coupled with attributes.
+\cite{BicycleGANs} presented a framework that is able to model the multi-modal distribution of possible outputs.
+%
+%
+Image-to-image translation has also been well-studied in an unsupervised setting \cite{See pix2pixHD}.
 \cite{UNIT} studied on unpaired image-to-image translation by training a two-branch GAN. Each branch is composed with a encoder, a generator and a discriminator. With the idea that high-level representation of a pair of corresponding images in two domains should be the same, high-level layers share weights between two branches in encoders, generators and discriminators. 
 %
-CycleGAN~\cite{CycleGAN}, DiscoGAN~\cite{DiscoGAN} and DualGAN~\cite{DualGAN} developed similar architectures to translate unpaired images which contain, for each, two generators and two discriminators. These methods learn two mappings in an adversarial training process such that an input image in one domain is mapped to a generated image in another, and then the generated image is mapped to a reconstructed image which is closed to the input image in some measures. These methods shared the same idea that since the generated image is able to reconstruct the input image, it should contain the content of the input image. >>>>discuss the different between supervised and unsupervised methods<<<<<
+CycleGAN~\cite{CycleGAN}, DiscoGAN~\cite{DiscoGAN} and DualGAN~\cite{DualGAN} developed similar architectures to translate unpaired images which contain, for each, two generators and two discriminators. These methods learn two mappings in an adversarial training process such that an input image in one domain is mapped to a generated image in another, and then the generated image is mapped to a reconstructed image which is closed to the input image in some measures. These methods shared the same idea that since the generated image is able to reconstruct the input image, it should contain the content of the input image. 
+
+Our work focuses on translating face images from corresponding edge maps in a supervised setting, which is able to learn the long range dependencies and global structure across image.
 
 \subsection{Attention mechinism}
->>>>>> Not familiar yet. <<<<<<<<<
+>>>>>> To be edited <<<<<<<<<
+Recently, attention mechanisms have become an integral part of models that must capture global dependencies [2, 34, 36, 6]. In particular, self-attention [4, 20], also called intra-attention, calculates the response at a position in a sequence by attending to all positions within the same sequence. Vaswani et al. [32] demonstrated that machine translation models could achieve state-of-the-art results by solely using a self-attention model. Parmar et al. [21] proposed an Image Transformer model to add self-attention into an autoregressive model for image generation. Wang et al. [33] formalized self-attention as a non-local operation to model the spatial-temporal dependencies in video sequences. In spite of this progress, self-attention has not yet been explored in the context of GANs. 

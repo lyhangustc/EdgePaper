@@ -13,7 +13,15 @@ E_{s\sim p_{data}(x)}[\log D(x,y)]+E_{(x,y)\sim p_{data}(x,y)}[\log(1-D(x,G(x)))
 \end{equation}
 The generator of pix2pix is a convolution-based U-Net \cite{Unet}, the input of which is only applied to the first layer. The discriminator is patch-wise discriminator introduced by PatchGANs \cite{PatchGANs}. The conditional image is concatenated channel-wisely to the synthesized image or real image as the input of the discriminator.
 >>>> show the loss implementation in PatchGANs <<<<<
-
+%
+%
+\begin{figure}
+	\label{fig:CSM}
+	\includegraphics[width=0.8\textwidth]{figures/CSM}
+	\caption{CSM}
+\end{figure}
+%
+%
 \subsection{Conditional Self-Attention Module (CSM)}
 Since convolution operation focuses on local receptive field and have to capture the long rang dependencies across the entire image through several layers, which is computationally inefficiently. Inspired by \cite{non-local} and \cite{SAGANs}, we introduce a conditional self-attention module (CSM) to the convolution-based pix2pix framework in order to capture the long rang dependencies of images and feature maps, as shown in Figure \ref{label}
 
@@ -60,3 +68,9 @@ The discriminator pix2pix uses is a patch-wise dicriminator \cite{PatchGANs}, wh
 % add CSMs to discriminator or not? if not, why? (GPU memory budget limited)
 Our architecture is based on the architecture of the pix2pix method which use a convolution-based U-Net \cite{Unet} as its generator and a patch-wise discriminator. We add the proposed a CSM after every convolutional layers to the generator except the first and last ones. CSMs are able to access the information of the conditional image directly and model the long rang dependencies across images and feature maps. Also, we switch the patch-wise discriminator into the proposed multiple level patch discriminator to enable the discriminator network to capture both global and local information and therefore guide the generator to generator images with more structural layout.  
 Figure \ref{fig:} shows the 
+%
+\begin{figure}
+	\label{fig:architecture}
+	\includegraphics[width=0.8\textwidth]{figures/architecture}
+	\caption{Architecure}
+\end{figure}
