@@ -24,4 +24,10 @@ sample-*.pdf
 *.tgz
 *.zip
 *.rpi
+*.out
+*.gz
+*.bbx
+*.bst
+*.cbx
+*.dbx
 *~
