@@ -40,6 +40,13 @@ CycleGAN~\cite{CycleGAN}, DiscoGAN~\cite{DiscoGAN} and DualGAN~\cite{DualGAN} de
 
 Our work focuses on translating face images from corresponding edge maps in a supervised setting, which is able to learn the long-range dependencies and global structure across image.
 
-\subsection{Attention mechinism}
->>>>>> To be edited <<<<<<<<<
-Recently, attention mechanisms have become an integral part of models that must capture global dependencies [2, 34, 36, 6]. In particular, self-attention [4, 20], also called intra-attention, calculates the response at a position in a sequence by attending to all positions within the same sequence. Vaswani et al. [32] demonstrated that machine translation models could achieve state-of-the-art results by solely using a self-attention model. Parmar et al. [21] proposed an Image Transformer model to add self-attention into an autoregressive model for image generation. Wang et al. [33] formalized self-attention as a non-local operation to model the spatial-temporal dependencies in video sequences. In spite of this progress, self-attention has not yet been explored in the context of GANs. 
+\subsection{Attention Mechanism}
+The convolution operation has a local receptive field. Several layers and large kernel sizes are required to sense the global structure in a large receptive field, which, however, loses the computational and statistical efficiency. Recently, attention mechanisms have been introduced to capture global dependencies \cite{SAGANs-2,34,36,6}.
+Self-attention \cite{SAGANs-4,20} has been shown to be powerful in a variety of tasks.
+\cite{SAGANs-32} applied self-attention to machine translation models, and demonstrated the plausible effectiveness of self-attention mechanism. 
+\cite{SAGANs-21} studied on combining the self-attention mechanism and autoregressive models, and proposed an image transformer model in image generation. 
+Inspired by non-local operation in computer vision, \cite{non-local} utilize self-attention mechanism as a non-local operation to model long-range spatial-temporal dependencies for video processing.
+\cite{SAGANs} introduced self-attention to unconditional GANs and achieved state-of-the-art results in generating natural images from noise vectors. Inspired by previous works,  we explore the self-attention mechanisms in the context of image-to-image translation. 
+
+
+In particular, self-attention [4, 20], also called intra-attention, calculates the response at a position in a sequence by attending to all positions within the same sequence. Vaswani et al. [32] demonstrated that machine translation models could achieve state-of-the-art results by solely using a self-attention model. Parmar et al. [21] proposed an Image Transformer model to add self-attention into an autoregressive model for image generation. Wang et al. [33] formalized self-attention as a non-local operation to model the spatial-temporal dependencies in video sequences. In spite of this progress, self-attention has not yet been explored in the context of GANs. 
