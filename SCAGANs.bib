@@ -1,0 +1,769 @@
+%%% ====================================================================
+%%%  BibTeX-file{
+%%%     author          = "Gerry Murray",
+%%%     version         = "1.2",
+%%%     date            = "2 April 2012",
+%%%     filename        = "acmsmall-sample-bibfile.bib",
+%%%     address         = "ACM, NY",
+%%%     email           = "murray at hq.acm.org",
+%%%     codetable       = "ISO/ASCII",c
+%%%     keywords        = "ACM Reference Format, bibliography, citation, references",
+%%%     supported       = "yes",
+%%%     docstring       = "This BibTeX database file contains 'bibdata' entries
+%%%                        that 'match' the examples provided in the Specifications Document
+%%%                        AND, also, 'legacy'-type bibs. It should assist authors in
+%%%                        choosing the 'correct' at-bibtype and necessary bib-fields
+%%%                        so as to obtain the appropriate ACM Reference Format output.
+%%%                        It also contains many 'Standard Abbreviations'. "
+%%%  }
+%%% ====================================================================
+
+% Journals
+
+% First the Full Name is given, then the abbreviation used in the AMS Math
+% Reviews, with an indication if it could not be found there.
+% Note the 2nd overwrites the 1st, so swap them if you want the full name.
+
+ %{AMS}
+ @String{AMSTrans = "American Mathematical Society Translations" }
+ @String{AMSTrans = "Amer. Math. Soc. Transl." }
+ @String{BullAMS = "Bulletin of the American Mathematical Society" }
+ @String{BullAMS = "Bull. Amer. Math. Soc." }
+ @String{ProcAMS = "Proceedings of the American Mathematical Society" }
+ @String{ProcAMS = "Proc. Amer. Math. Soc." }
+ @String{TransAMS = "Transactions of the American Mathematical Society" }
+ @String{TransAMS = "Trans. Amer. Math. Soc." }
+
+ %ACM
+ @String{CACM = "Communications of the {ACM}" }
+ @String{CACM = "Commun. {ACM}" }
+ @String{CompServ = "Comput. Surveys" }
+ @String{JACM = "J. ACM" }
+ @String{ACMMathSoft = "{ACM} Transactions on Mathematical Software" }
+ @String{ACMMathSoft = "{ACM} Trans. Math. Software" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newsletter" }
+ @String{SIGNUM = "{ACM} {SIGNUM} Newslett." }
+
+ @String{AmerSocio = "American Journal of Sociology" }
+ @String{AmerStatAssoc = "Journal of the American Statistical Association" }
+ @String{AmerStatAssoc = "J. Amer. Statist. Assoc." }
+ @String{ApplMathComp = "Applied Mathematics and Computation" }
+ @String{ApplMathComp = "Appl. Math. Comput." }
+ @String{AmerMathMonthly = "American Mathematical Monthly" }
+ @String{AmerMathMonthly = "Amer. Math. Monthly" }
+ @String{BIT = "{BIT}" }
+ @String{BritStatPsych = "British Journal of Mathematical and Statistical
+          Psychology" }
+ @String{BritStatPsych = "Brit. J. Math. Statist. Psych." }
+ @String{CanMathBull = "Canadian Mathematical Bulletin" }
+ @String{CanMathBull = "Canad. Math. Bull." }
+ @String{CompApplMath = "Journal of Computational and Applied Mathematics" }
+ @String{CompApplMath = "J. Comput. Appl. Math." }
+ @String{CompPhys = "Journal of Computational Physics" }
+ @String{CompPhys = "J. Comput. Phys." }
+ @String{CompStruct = "Computers and Structures" }
+ @String{CompStruct = "Comput. \& Structures" }
+ @String{CompJour = "The Computer Journal" }
+ @String{CompJour = "Comput. J." }
+ @String{CompSysSci = "Journal of Computer and System Sciences" }
+ @String{CompSysSci = "J. Comput. System Sci." }
+ @String{Computing = "Computing" }
+ @String{ContempMath = "Contemporary Mathematics" }
+ @String{ContempMath = "Contemp. Math." }
+ @String{Crelle = "Crelle's Journal" }
+ @String{GiornaleMath = "Giornale di Mathematiche" }
+ @String{GiornaleMath = "Giorn. Mat." } % didn't find in AMS MR., ibid.
+
+ %IEEE
+ @String{Computer = "{IEEE} Computer" }
+ @String{IEEETransComp = "{IEEE} Transactions on Computers" }
+ @String{IEEETransComp = "{IEEE} Trans. Comput." }
+ @String{IEEETransAC = "{IEEE} Transactions on Automatic Control" }
+ @String{IEEETransAC = "{IEEE} Trans. Automat. Control" }
+ @String{IEEESpec = "{IEEE} Spectrum" } % didn't find in AMS MR
+ @String{ProcIEEE = "Proceedings of the {IEEE}" }
+ @String{ProcIEEE = "Proc. {IEEE}" } % didn't find in AMS MR
+ @String{IEEETransAeroElec = "{IEEE} Transactions on Aerospace and Electronic
+     Systems" }
+ @String{IEEETransAeroElec = "{IEEE} Trans. Aerospace Electron. Systems" }
+
+ @String{IMANumerAna = "{IMA} Journal of Numerical Analysis" }
+ @String{IMANumerAna = "{IMA} J. Numer. Anal." }
+ @String{InfProcLet = "Information Processing Letters" }
+ @String{InfProcLet = "Inform. Process. Lett." }
+ @String{InstMathApp = "Journal of the Institute of Mathematics and
+     its Applications" }
+ @String{InstMathApp = "J. Inst. Math. Appl." }
+ @String{IntControl = "International Journal of Control" }
+ @String{IntControl = "Internat. J. Control" }
+ @String{IntNumerEng = "International Journal for Numerical Methods in
+     Engineering" }
+ @String{IntNumerEng = "Internat. J. Numer. Methods Engrg." }
+ @String{IntSuper = "International Journal of Supercomputing Applications" }
+ @String{IntSuper = "Internat. J. Supercomputing Applic." } % didn't find
+%% in AMS MR
+ @String{Kibernetika = "Kibernetika" }
+ @String{JResNatBurStand = "Journal of Research of the National Bureau
+     of Standards" }
+ @String{JResNatBurStand = "J. Res. Nat. Bur. Standards" }
+ @String{LinAlgApp = "Linear Algebra and its Applications" }
+ @String{LinAlgApp = "Linear Algebra Appl." }
+ @String{MathAnaAppl = "Journal of Mathematical Analysis and Applications" }
+ @String{MathAnaAppl = "J. Math. Anal. Appl." }
+ @String{MathAnnalen = "Mathematische Annalen" }
+ @String{MathAnnalen = "Math. Ann." }
+ @String{MathPhys = "Journal of Mathematical Physics" }
+ @String{MathPhys = "J. Math. Phys." }
+ @String{MathComp = "Mathematics of Computation" }
+ @String{MathComp = "Math. Comp." }
+ @String{MathScand = "Mathematica Scandinavica" }
+ @String{MathScand = "Math. Scand." }
+ @String{TablesAidsComp = "Mathematical Tables and Other Aids to Computation" }
+ @String{TablesAidsComp = "Math. Tables Aids Comput." }
+ @String{NumerMath = "Numerische Mathematik" }
+ @String{NumerMath = "Numer. Math." }
+ @String{PacificMath = "Pacific Journal of Mathematics" }
+ @String{PacificMath = "Pacific J. Math." }
+ @String{ParDistComp = "Journal of Parallel and Distributed Computing" }
+ @String{ParDistComp = "J. Parallel and Distrib. Comput." } % didn't find
+%% in AMS MR
+ @String{ParComputing = "Parallel Computing" }
+ @String{ParComputing = "Parallel Comput." }
+ @String{PhilMag = "Philosophical Magazine" }
+ @String{PhilMag = "Philos. Mag." }
+ @String{ProcNAS = "Proceedings of the National Academy of Sciences
+                    of the USA" }
+ @String{ProcNAS = "Proc. Nat. Acad. Sci. U. S. A." }
+ @String{Psychometrika = "Psychometrika" }
+ @String{QuartMath = "Quarterly Journal of Mathematics, Oxford, Series (2)" }
+ @String{QuartMath = "Quart. J. Math. Oxford Ser. (2)" }
+ @String{QuartApplMath = "Quarterly of Applied Mathematics" }
+ @String{QuartApplMath = "Quart. Appl. Math." }
+ @String{RevueInstStat = "Review of the International Statisical Institute" }
+ @String{RevueInstStat = "Rev. Inst. Internat. Statist." }
+
+ %SIAM
+ @String{JSIAM = "Journal of the Society for Industrial and Applied
+     Mathematics" }
+ @String{JSIAM = "J. Soc. Indust. Appl. Math." }
+ @String{JSIAMB = "Journal of the Society for Industrial and Applied
+     Mathematics, Series B, Numerical Analysis" }
+ @String{JSIAMB = "J. Soc. Indust. Appl. Math. Ser. B Numer. Anal." }
+ @String{SIAMAlgMeth = "{SIAM} Journal on Algebraic and Discrete Methods" }
+ @String{SIAMAlgMeth = "{SIAM} J. Algebraic Discrete Methods" }
+ @String{SIAMAppMath = "{SIAM} Journal on Applied Mathematics" }
+ @String{SIAMAppMath = "{SIAM} J. Appl. Math." }
+ @String{SIAMComp = "{SIAM} Journal on Computing" }
+ @String{SIAMComp = "{SIAM} J. Comput." }
+ @String{SIAMMatrix = "{SIAM} Journal on Matrix Analysis and Applications" }
+ @String{SIAMMatrix = "{SIAM} J. Matrix Anal. Appl." }
+ @String{SIAMNumAnal = "{SIAM} Journal on Numerical Analysis" }
+ @String{SIAMNumAnal = "{SIAM} J. Numer. Anal." }
+ @String{SIAMReview = "{SIAM} Review" }
+ @String{SIAMReview = "{SIAM} Rev." }
+ @String{SIAMSciStat = "{SIAM} Journal on Scientific and Statistical
+     Computing" }
+ @String{SIAMSciStat = "{SIAM} J. Sci. Statist. Comput." }
+
+ @String{SoftPracExp = "Software Practice and Experience" }
+ @String{SoftPracExp = "Software Prac. Experience" } % didn't find in AMS MR
+ @String{StatScience = "Statistical Science" }
+ @String{StatScience = "Statist. Sci." }
+ @String{Techno = "Technometrics" }
+ @String{USSRCompMathPhys = "{USSR} Computational Mathematics and Mathematical
+     Physics" }
+ @String{USSRCompMathPhys = "{U. S. S. R.} Comput. Math. and Math. Phys." }
+ @String{VLSICompSys = "Journal of {VLSI} and Computer Systems" }
+ @String{VLSICompSys = "J. {VLSI} Comput. Syst." }
+ @String{ZAngewMathMech = "Zeitschrift fur Angewandte Mathematik und
+     Mechanik" }
+ @String{ZAngewMathMech = "Z. Angew. Math. Mech." }
+ @String{ZAngewMathPhys = "Zeitschrift fur Angewandte Mathematik und Physik" }
+ @String{ZAngewMathPhys = "Z. Angew. Math. Phys." }
+
+% Publishers % ================================================= |
+
+ @String{Academic = "Academic Press" }
+ @String{ACMPress = "{ACM} Press" }
+ @String{AdamHilger = "Adam Hilger" }
+ @String{AddisonWesley = "Addison-Wesley" }
+ @String{AllynBacon = "Allyn and Bacon" }
+ @String{AMS = "American Mathematical Society" }
+ @String{Birkhauser = "Birkha{\"u}ser" }
+ @String{CambridgePress = "Cambridge University Press" }
+ @String{Chelsea = "Chelsea" }
+ @String{ClaredonPress = "Claredon Press" }
+ @String{DoverPub = "Dover Publications" }
+ @String{Eyolles = "Eyolles" }
+ @String{HoltRinehartWinston = "Holt, Rinehart and Winston" }
+ @String{Interscience = "Interscience" }
+ @String{JohnsHopkinsPress = "The Johns Hopkins University Press" }
+ @String{JohnWileySons = "John Wiley and Sons" }
+ @String{Macmillan = "Macmillan" }
+ @String{MathWorks = "The Math Works Inc." }
+ @String{McGrawHill = "McGraw-Hill" }
+ @String{NatBurStd = "National Bureau of Standards" }
+ @String{NorthHolland = "North-Holland" }
+ @String{OxfordPress = "Oxford University Press" }  %address Oxford or London?
+ @String{PergamonPress = "Pergamon Press" }
+ @String{PlenumPress = "Plenum Press" }
+ @String{PrenticeHall = "Prentice-Hall" }
+ @String{SIAMPub = "{SIAM} Publications" }
+ @String{Springer = "Springer-Verlag" }
+ @String{TexasPress = "University of Texas Press" }
+ @String{VanNostrand = "Van Nostrand" }
+ @String{WHFreeman = "W. H. Freeman and Co." }
+
+%Entries
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Traditional Image Generation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@ARTICLE{EBSR, 
+	author={W. T. Freeman and T. R. Jones and E. C. Pasztor}, 
+	journal={IEEE Computer Graphics and Applications}, 
+	title={Example-based super-resolution}, 
+	year={2002}, 
+	volume={22}, 
+	number={2}, 
+	pages={56-65}, 
+	keywords={image representation;image resolution;image texture;interpolation;learning by example;rendering (computer graphics);NTSC video content conversion;example-based super-resolution;graphics;high frequency details;high-definition television;high-resolution enlargements;image based rendering;image processing;image-based representations;nearest-neighbor search;pixel-based images;texture mapping;training-based super-resolution algorithm;zoomed images;Graphics;HDTV;High definition video;Image converters;Image processing;Image resolution;Nearest neighbor searches;Pixel;Rendering (computer graphics);TV}, 
+	doi={10.1109/38.988747}, 
+	ISSN={0272-1716}, 
+	month={Mar},}
+@INPROCEEDINGS{TextureSyn, 
+	author={A. A. Efros and T. K. Leung}, 
+	booktitle={Proceedings of the Seventh IEEE International Conference on Computer Vision}, 
+	title={Texture synthesis by non-parametric sampling}, 
+	year={1999}, 
+	volume={2}, 
+	number={}, 
+	pages={1033-1038 vol.2}, 
+	keywords={Markov processes;computer vision;image sampling;image texture;Markov random field model;conditional pixel distribution;initial seed;local structure preservation;new image growth;nonparametric sampling;perceptually intuitive parameter;randomness;real-world textures;sample image querying;synthetic textures;texture synthesis;Application software;Computer science;Computer vision;Filters;Histograms;Image sampling;Image texture analysis;Integrated circuit synthesis;Pixel;Sampling methods}, 
+	doi={10.1109/ICCV.1999.790383}, 
+	ISSN={}, 
+	month={},}
+@article{SceneCompletion,
+	author = {Hays, James and Efros, Alexei A.},
+	title = {Scene Completion Using Millions of Photographs},
+	journal = {Commun. ACM},
+	issue_date = {October 2008},
+	volume = {51},
+	number = {10},
+	month = oct,
+	year = {2008},
+	issn = {0001-0782},
+	pages = {87--94},
+	numpages = {8},
+	url = {http://doi.acm.org/10.1145/1400181.1400202},
+	doi = {10.1145/1400181.1400202},
+	acmid = {1400202},
+	publisher = {ACM},
+	address = {New York, NY, USA},
+} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% Self-Attention %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@article{Non-local,
+	title={Non-local neural networks},
+	author={Wang, Xiaolong and Girshick, Ross and Gupta, Abhinav and He, Kaiming},
+	journal={arXiv preprint arXiv:1711.07971},
+	volume={10},
+	year={2017}
+}
+@inproceedings{MachineReading,
+	title={Long Short-Term Memory-Networks for Machine Reading},
+	author={Cheng, Jianpeng and Dong, Li and Lapata, Mirella},
+	booktitle={Proceedings of the 2016 Conference on Empirical Methods in Natural Language Processing},
+	pages={551--561},
+	year={2016}
+}
+@article{Transformer,
+	author    = {Niki Parmar and
+	Ashish Vaswani and
+	Jakob Uszkoreit and
+	Lukasz Kaiser and
+	Noam Shazeer and
+	Alexander Ku},
+	title     = {Image Transformer},
+	journal   = {CoRR},
+	volume    = {abs/1802.05751},
+	year      = {2018},
+	url       = {http://arxiv.org/abs/1802.05751},
+	archivePrefix = {arXiv},
+	eprint    = {1802.05751},
+	timestamp = {Thu, 01 Mar 2018 19:20:48 +0100},
+	biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1802-05751},
+	bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+@inproceedings{Attention,
+	title={Attention is all you need},
+	author={Vaswani, Ashish and Shazeer, Noam and Parmar, Niki and Uszkoreit, Jakob and Jones, Llion and Gomez, Aidan N and Kaiser, {\L}ukasz and Polosukhin, Illia},
+	booktitle={Advances in Neural Information Processing Systems},
+	pages={5998--6008},
+	year={2017}
+}
+@article{AlignTranslate,
+	title={Neural machine translation by jointly learning to align and translate},
+	author={Bahdanau, Dzmitry and Cho, Kyunghyun and Bengio, Yoshua},
+	journal={arXiv preprint arXiv:1409.0473},
+	year={2014}
+}
+@inproceedings{ShowAttenTell,
+	title={Show, attend and tell: Neural image caption generation with visual attention},
+	author={Xu, Kelvin and Ba, Jimmy and Kiros, Ryan and Cho, Kyunghyun and Courville, Aaron and Salakhudinov, Ruslan and Zemel, Rich and Bengio, Yoshua},
+	booktitle={International conference on machine learning},
+	pages={2048--2057},
+	year={2015}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%% CNNs %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@article{BatchNorm,
+	title={Batch normalization: Accelerating deep network training by reducing internal covariate shift},
+	author={Ioffe, Sergey and Szegedy, Christian},
+	journal={arXiv preprint arXiv:1502.03167},
+	year={2015}
+}
+@article{Adam,
+	title={Adam: A method for stochastic optimization},
+	author={Kingma, Diederik P and Ba, Jimmy},
+	journal={arXiv preprint arXiv:1412.6980},
+	year={2014}
+}
+@article{VAEs,
+	title={Auto-encoding variational bayes},
+	author={Kingma, Diederik P and Welling, Max},
+	journal={arXiv preprint arXiv:1312.6114},
+	year={2013}
+}
+@misc{checkerboard,
+	author = {Odena, Augustus and Dumoulin, Vincent and Olah, Chris},
+	title = {Deconvolution and Checkerboard Artifacts},
+	year = {2016},
+	howpublished = {http://distill.pub/2016/deconv-checkerboard/}
+}
+@inproceedings{Unet,
+	title={U-net: Convolutional networks for biomedical image segmentation},
+	author={Ronneberger, Olaf and Fischer, Philipp and Brox, Thomas},
+	booktitle={International Conference on Medical image computing and computer-assisted intervention},
+	pages={234--241},
+	year={2015},
+	organization={Springer}
+}
+@inproceedings{texture_markovian,
+	title={Precomputed real-time texture synthesis with markovian generative adversarial networks},
+	author={Li, Chuan and Wand, Michael},
+	booktitle={European Conference on Computer Vision},
+	pages={702--716},
+	year={2016},
+	organization={Springer}
+}
+@INPROCEEDINGS{styel_transfer, 
+	author={L. A. Gatys and A. S. Ecker and M. Bethge}, 
+	booktitle={2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+	title={Image Style Transfer Using Convolutional Neural Networks}, 
+	year={2016}, 
+	volume={}, 
+	number={}, 
+	pages={2414-2423}, 
+	keywords={image representation;neural nets;object recognition;rendering (computer graphics);arbitrary photograph;artistic style;convolutional neural networks;high level image synthesis;image content;image processing;image representations;image style transfer;neural algorithm;object recognition;rendering;semantic content;semantic information;Feature extraction;Image reconstruction;Image representation;Neural networks;Neuroscience;Semantics;Visualization}, 
+	doi={10.1109/CVPR.2016.265}, 
+	ISSN={}, 
+	month={June},}
+@article{SN,
+	title={Spectral normalization for generative adversarial networks},
+	author={Miyato, Takeru and Kataoka, Toshiki and Koyama, Masanori and Yoshida, Yuichi},
+	journal={arXiv preprint arXiv:1802.05957},
+	year={2018}
+}
+@INPROCEEDINGS{shape_completion, 
+	author={X. Han and Z. Li and H. Huang and E. Kalogerakis and Y. Yu}, 
+	booktitle={2017 IEEE International Conference on Computer Vision (ICCV)}, 
+	title={High-Resolution Shape Completion Using Deep Neural Networks for Global Structure and Local Geometry Inference}, 
+	year={2017}, 
+	volume={}, 
+	number={}, 
+	pages={85-93}, 
+	keywords={encoding;geometry;image fusion;image representation;image resolution;learning (artificial intelligence);neural nets;stereo image processing;3D fully convolutional module;3D shapes;LSTM-CF;data-driven method;deep learning architecture;deep neural networks;global structure inference network;global structure network;global structure representation;high-resolution shape completion;input local 3D patches;local geometry inference;local geometry refinement network;local geometry refinement networks;long short-term memorized context fusion module;volumetric encoder-decoder architecture;Databases;Feature extraction;Geometry;Shape;Surface reconstruction;Three-dimensional displays;Two dimensional displays}, 
+	doi={10.1109/ICCV.2017.19}, 
+	ISSN={}, 
+	month={Oct},}
+@INPROCEEDINGS{repair_3d, 
+	author={D. T. Nguyen and B. S. Hua and M. K. Tran and Q. H. Pham and S. K. Yeung}, 
+	booktitle={2016 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+	title={A Field Model for Repairing 3D Shapes}, 
+	year={2016}, 
+	volume={}, 
+	number={}, 
+	pages={5676-5684}, 
+	keywords={Markov processes;approximation theory;belief networks;convolution;image colour analysis;image reconstruction;maximum likelihood estimation;random processes;stereo image processing;variational techniques;3D shape templates;MAP estimation;MRF;Markov random field;RGB images;appearance information;convolutional deep belief network;geometric information;incomplete 3D shapes;maximum a posteriori estimation;multiview RGB data;noisy 3D shapes;practical scene reconstruction;random binary variables;variational mean field approximation;Computational modeling;Image reconstruction;Shape;Solid modeling;Surface reconstruction;Three-dimensional displays;Two dimensional displays}, 
+	doi={10.1109/CVPR.2016.612}, 
+	ISSN={}, 
+	month={June},}
+%%%%%%%%%%%%%%%%%%%%%%%%%%% GANs %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@inproceedings{GANs,
+	author = {Goodfellow, Ian J. and Pouget-Abadie, Jean and Mirza, Mehdi and Xu, Bing and Warde-Farley, David and Ozair, Sherjil and Courville, Aaron and Bengio, Yoshua},
+	title = {Generative Adversarial Nets},
+	booktitle = {Proceedings of the 27th International Conference on Neural Information Processing Systems - Volume 2},
+	series = {NIPS'14},
+	year = {2014},
+	location = {Montreal, Canada},
+	pages = {2672--2680},
+	numpages = {9},
+	url = {http://dl.acm.org/citation.cfm?id=2969033.2969125},
+	acmid = {2969125},
+	publisher = {MIT Press},
+	address = {Cambridge, MA, USA},
+} 
+
+@article{PixelCNN,
+	title={Conditional Image Generation with PixelCNN Decoders},
+	author={van den Oord, Aaron and Kalchbrenner, Nal and 
+	Vinyals, Oriol and Espeholt, Lasse and Graves, Alex and
+	Kavukcuoglu, Koray},
+	journal={arXiv preprint arXiv:1606.05328},
+	year={2016}
+}
+@article{pixel,
+	title={Pixel Recurrent Neural Networks},
+	author={van den Oord, Aaron and Kalchbrenner, Nal and Kavukcuoglu, Koray},
+	journal={arXiv preprint arXiv:1601.06759},
+	year={2016}
+}
+@inproceedings{LaplaceGANs,
+	title={Deep generative image models using a￼ laplacian pyramid of adversarial networks},
+	author={Denton, Emily L and Chintala, Soumith and Fergus, Rob and others},
+	booktitle={Advances in neural information processing systems},
+	pages={1486--1494},
+	year={2015}
+}
+@incollection{Improved_Techniques,
+	title = {Improved Techniques for Training GANs},
+	author = {Salimans, Tim and Goodfellow, Ian and Zaremba, Wojciech and Cheung, Vicki and Radford, Alec and Chen, Xi and Chen, Xi},
+	booktitle = {Advances in Neural Information Processing Systems 29},
+	editor = {D. D. Lee and M. Sugiyama and U. V. Luxburg and I. Guyon and R. Garnett},
+	pages = {2234--2242},
+	year = {2016},
+	publisher = {Curran Associates, Inc.},
+	url = {http://papers.nips.cc/paper/6125-improved-techniques-for-training-gans.pdf}
+}
+@article{EBGANs,
+	title={Energy-based generative adversarial network},
+	author={Zhao, Junbo and Mathieu, Michael and LeCun, Yann},
+	journal={arXiv preprint arXiv:1609.03126},
+	year={2016}
+}
+
+@article{WGANs,
+	title={Wasserstein gan},
+	author={Arjovsky, Martin and Chintala, Soumith and Bottou, L{\'e}on},
+	journal={arXiv preprint arXiv:1701.07875},
+	year={2017}
+}
+
+@inproceedings{WGAN-GP,
+	author    = {Ishaan Gulrajani and
+	Faruk Ahmed and
+	Mart{\'{\i}}n Arjovsky and
+	Vincent Dumoulin and
+	Aaron C. Courville},
+	title     = {Improved Training of Wasserstein GANs},
+	booktitle = {Advances in Neural Information Processing Systems 30: Annual Conference
+	on Neural Information Processing Systems 2017, 4-9 December 2017,
+	Long Beach, CA, {USA}},
+	pages     = {5769--5779},
+	year      = {2017},
+	crossref  = {DBLP:conf/nips/2017},
+	url       = {http://papers.nips.cc/paper/7159-improved-training-of-wasserstein-gans},
+	timestamp = {Mon, 27 Nov 2017 12:38:48 +0100},
+	biburl    = {https://dblp.org/rec/bib/conf/nips/GulrajaniAADC17},
+	bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+@INPROCEEDINGS{LSGANs, 
+	author={X. Mao and Q. Li and H. Xie and R. Y. K. Lau and Z. Wang and S. P. Smolley}, 
+	booktitle={2017 IEEE International Conference on Computer Vision (ICCV)}, 
+	title={Least Squares Generative Adversarial Networks}, 
+	year={2017}, 
+	volume={}, 
+	number={}, 
+	pages={2813-2821}, 
+	keywords={image classification;least squares approximations;unsupervised learning;LSGANs;Least Squares Generative Adversarial Networks;Pearson X2 divergence;classifier;higher quality images;learning process;least squares loss function;sigmoid cross entropy loss function;unsupervised learning;vanishing gradients problem;Entropy;Gallium nitride;Generators;Image resolution;Linear programming;Stability analysis}, 
+	doi={10.1109/ICCV.2017.304}, 
+	ISSN={}, 
+	month={Oct},}
+@article{DRAGANs,
+	title={On convergence and stability of GANs},
+	author={Kodali, Naveen and Abernethy, Jacob and Hays, James and Kira, Zsolt},
+	journal={arXiv preprint arXiv:1705.07215},
+	year={2017}
+}
+@article{BEGANs,
+	title={BEGAN: boundary equilibrium generative adversarial networks},
+	author={Berthelot, David and Schumm, Thomas and Metz, Luke},
+	journal={arXiv preprint arXiv:1703.10717},
+	year={2017}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%% Conditional GANs %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@article{cGANs,
+	title={Conditional generative adversarial nets},
+	author={Mirza, Mehdi and Osindero, Simon},
+	journal={arXiv preprint arXiv:1411.1784},
+	year={2014}
+}
+@article{DCGANs,
+	title={Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks},
+	author={Radford, Alec and Metz, Luke and Chintala, Soumith},
+	journal={arXiv preprint arXiv:1511.06434},
+	year={2015}
+}
+@article{3DGANs,
+	title={Learning to generate chairs, tables and cars with convolutional networks},
+	author={Dosovitskiy, Alexey and Springenberg, Jost Tobias and Tatarchenko, Maxim and Brox, Thomas},
+	journal={IEEE transactions on pattern analysis and machine intelligence},
+	volume={39},
+	number={4},
+	pages={692--705},
+	year={2017},
+	publisher={IEEE}
+}
+@inproceedings{InfoGANs,
+	title={Infogan: Interpretable representation learning by information
+	maximizing generative adversarial nets},
+	author={Chen, Xi and Duan, Yan and Houthooft, Rein and Schulman, John and
+	Sutskever, Ilya and Abbeel, Pieter},
+	booktitle={Advances in Neural Information Processing Systems},
+	pages={2172--2180},
+	year={2016}
+}
+
+@InProceedings{ACGANs,
+	title = 	 {Conditional Image Synthesis with Auxiliary Classifier {GAN}s},
+	author = 	 {Augustus Odena and Christopher Olah and Jonathon Shlens},
+	booktitle = 	 {Proceedings of the 34th International Conference on Machine Learning},
+	pages = 	 {2642--2651},
+	year = 	 {2017},
+	editor = 	 {Doina Precup and Yee Whye Teh},
+	volume = 	 {70},
+	series = 	 {Proceedings of Machine Learning Research},
+	address = 	 {International Convention Centre, Sydney, Australia},
+	month = 	 {06--11 Aug},
+	publisher = 	 {PMLR},
+	pdf = 	 {http://proceedings.mlr.press/v70/odena17a/odena17a.pdf},
+	url = 	 {http://proceedings.mlr.press/v70/odena17a.html},
+	abstract = 	 {In this paper we introduce new methods for the improved training of generative adversarial networks (GANs) for image synthesis. We construct a variant of GANs employing label conditioning that results in $128\times 128$ resolution image samples exhibiting global coherence. We expand on previous work for image quality assessment to provide two new analyses for assessing the discriminability and diversity of samples from class-conditional image synthesis models. These analyses demonstrate that high resolution samples provide class information not present in low resolution samples. Across 1000 ImageNet classes, $128\times 128$ samples are more than twice as discriminable as artificially resized $32\times 32$ samples. In addition, 84.7\% of the classes have samples exhibiting diversity comparable to real ImageNet data.}
+}
+
+@inproceedings{cGAN-projection,
+	title={c{GAN}s with Projection Discriminator},
+	author={Takeru Miyato and Masanori Koyama},
+	booktitle={International Conference on Learning Representations},
+	year={2018},
+	url={https://openreview.net/forum?id=ByS1VpgRZ},
+}
+@inproceedings{SGANs,
+	title={Stacked generative adversarial networks},
+	author={Huang, Xun and Li, Yixuan and Poursaeed, Omid and Hopcroft, John and Belongie, Serge},
+	booktitle={IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
+	volume={2},
+	number={4},
+	year={2017}
+}
+@inproceedings{StackGANs,
+	title={StackGAN: Text to Photo-Realistic Image Synthesis With Stacked Generative Adversarial Networks},
+	author={Zhang, Han and Xu, Tao and Li, Hongsheng and Zhang, Shaoting and Wang, Xiaogang and Huang, Xiaolei and Metaxas, Dimitris N},
+	booktitle={Proceedings of the IEEE International Conference on Computer Vision},
+	pages={5907--5915},
+	year={2017}
+}
+@article{StackGANs++,
+	author    = {Han Zhang and
+	Tao Xu and
+	Hongsheng Li and
+	Shaoting Zhang and
+	Xiaogang Wang and
+	Xiaolei Huang and
+	Dimitris N. Metaxas},
+	title     = {StackGAN++: Realistic Image Synthesis with Stacked Generative Adversarial
+	Networks},
+	journal   = {CoRR},
+	volume    = {abs/1710.10916},
+	year      = {2017},
+	url       = {http://arxiv.org/abs/1710.10916},
+	archivePrefix = {arXiv},
+	eprint    = {1710.10916},
+	timestamp = {Thu, 02 Nov 2017 14:25:36 +0100},
+	biburl    = {https://dblp.org/rec/bib/journals/corr/abs-1710-10916},
+	bibsource = {dblp computer science bibliography, https://dblp.org}
+}
+@INPROCEEDINGS{SRGANs, 
+	author={C. Ledig and L. Theis and F. Huszár and J. Caballero and A. Cunningham and A. Acosta and A. Aitken and A. Tejani and J. Totz and Z. Wang and W. Shi}, 
+	booktitle={2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+	title={Photo-Realistic Single Image Super-Resolution Using a Generative Adversarial Network}, 
+	year={2017}, 
+	volume={}, 
+	number={}, 
+	pages={105-114}, 
+	keywords={feedforward neural nets;image reconstruction;image resolution;image sampling;image texture;realistic images;SRGAN;adversarial loss;content loss;deep residual network;deeper convolutional neural networks;discriminator network;generative adversarial network;heavily downsampled images;high-resolution images;mean squared reconstruction error;natural image manifold;objective function;perceptual loss function;perceptual similarity;photo-realistic natural images;photo-realistic single image super-resolution;photo-realistic textures;signal-to-noise ratios;super-resolution methods;upscaling factors;Gallium nitride;Image reconstruction;Image resolution;Manifolds;Network architecture;Signal resolution;Training}, 
+	doi={10.1109/CVPR.2017.19}, 
+	ISSN={1063-6919}, 
+	month={July},}
+@inproceedings{SR_Cascade,
+	title={Deep network cascade for image super-resolution},
+	author={Cui, Zhen and Chang, Hong and Shan, Shiguang and Zhong, Bineng and Chen, Xilin},
+	booktitle={European Conference on Computer Vision},
+	pages={49--64},
+	year={2014},
+	organization={Springer}
+}
+
+@article{SAGANs,
+	title={Self-Attention Generative Adversarial Networks},
+	author={Zhang, Han and Goodfellow, Ian and Metaxas, Dimitris and Odena, Augustus},
+	journal={arXiv preprint arXiv:1411.1784},
+	year={2018}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%% Image-to-Image Translation %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@inproceedings{CRN,
+	title={Photographic image synthesis with cascaded refinement networks},
+	author={Chen, Qifeng and Koltun, Vladlen},
+	booktitle={IEEE International Conference on Computer Vision (ICCV)},
+	volume={1},
+	number={2},
+	pages={3},
+	year={2017}
+}
+
+@incollection{UNIT,
+	title = {Unsupervised Image-to-Image Translation Networks},
+	author = {Liu, Ming-Yu and Breuel, Thomas and Kautz, Jan},
+	booktitle = {Advances in Neural Information Processing Systems 30},
+	editor = {I. Guyon and U. V. Luxburg and S. Bengio and H. Wallach and R. Fergus and S. Vishwanathan and R. Garnett},
+	pages = {700--708},
+	year = {2017},
+	publisher = {Curran Associates, Inc.},
+	url = {http://papers.nips.cc/paper/6672-unsupervised-image-to-image-translation-networks.pdf}
+}
+
+@INPROCEEDINGS{DualGANs, 
+	author={Z. Yi and H. Zhang and P. Tan and M. Gong}, 
+	booktitle={2017 IEEE International Conference on Computer Vision (ICCV)}, 
+	title={DualGAN: Unsupervised Dual Learning for Image-to-Image Translation}, 
+	year={2017}, 
+	volume={}, 
+	number={}, 
+	pages={2868-2876}, 
+	keywords={computational complexity;image reconstruction;unsupervised learning;Conditional Generative Adversarial Networks;conditional GAN;cross-domain image-to-image translation;fully labeled data;human labeling;image reconstruction error;labeled image pairs;loss function;multiple image translation tasks;natural language translation;novel dual-GAN mechanism;primal GAN;single GAN;task complexity;unsupervised dual learning;Computer vision;Gallium nitride;Generators;Image reconstruction;Training;Training data}, 
+	doi={10.1109/ICCV.2017.310}, 
+	ISSN={}, 
+	month={Oct},}
+
+@inproceedings{MUNIT,
+	title={Multimodal Unsupervised Image-to-image Translation},
+	author={Huang, Xun and Liu, Ming-Yu and Belongie, Serge and Kautz, Jan},
+	booktitle={ECCV},
+	year={2018}
+}
+
+@inproceedings{pix2pixHD,
+	title={High-Resolution Image Synthesis and Semantic Manipulation with Conditional GANs},
+	author={Ting-Chun Wang and Ming-Yu Liu and Jun-Yan Zhu and Andrew Tao and Jan Kautz and Bryan Catanzaro},  
+	booktitle={Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition},
+	year={2018}
+}
+
+@inproceedings{CoupleGANs,
+	author = {Liu, Ming-Yu and Tuzel, Oncel},
+	title = {Coupled Generative Adversarial Networks},
+	booktitle = {Proceedings of the 30th International Conference on Neural Information Processing Systems},
+	series = {NIPS'16},
+	year = {2016},
+	isbn = {978-1-5108-3881-9},
+	location = {Barcelona, Spain},
+	pages = {469--477},
+	numpages = {9},
+	url = {http://dl.acm.org/citation.cfm?id=3157096.3157149},
+	acmid = {3157149},
+	publisher = {Curran Associates Inc.},
+	address = {USA},
+} 
+
+% JunYan Zhu
+@INPROCEEDINGS{pix2pix, 
+	author={P. Isola and J. Y. Zhu and T. Zhou and A. A. Efros}, 
+	booktitle={2017 IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}, 
+	title={Image-to-Image Translation with Conditional Adversarial Networks}, 
+	year={2017}, 
+	volume={}, 
+	number={}, 
+	pages={5967-5976}, 
+	keywords={image colour analysis;image reconstruction;learning (artificial intelligence);social networking (online);user interfaces;colorizing images;conditional adversarial networks;edge maps;image-to-image translation;label maps;loss function;mapping functions;Force;Gallium nitride;Generators;Image edge detection;Image resolution;Training}, 
+	doi={10.1109/CVPR.2017.632}, 
+	ISSN={1063-6919}, 
+	month={July},}
+@inproceedings{CyCADA,
+	title={CyCADA: Cycle-Consistent Adversarial Domain Adaptation},
+	author={Hoffman, Judy and Tzeng, Eric and Park, Taesung and Zhu, Jun-Yan and Isola, Phillip and Saenko, Kate and Efros, Alexei A and Darrell, Trevor},
+	booktitle={International conference on machine learning},
+	year={2018}
+}
+
+@incollection{BicycleGANs,
+	title = {Toward Multimodal Image-to-Image Translation},
+	author = {Zhu, Jun-Yan and Zhang, Richard and Pathak, Deepak and Darrell, Trevor and Efros, Alexei A and Wang, Oliver and Shechtman, Eli},
+	booktitle = {Advances in Neural Information Processing Systems 30},
+	editor = {I. Guyon and U. V. Luxburg and S. Bengio and H. Wallach and R. Fergus and S. Vishwanathan and R. Garnett},
+	pages = {465--476},
+	year = {2017},
+	publisher = {Curran Associates, Inc.},
+	url = {http://papers.nips.cc/paper/6650-toward-multimodal-image-to-image-translation.pdf}
+}
+
+@INPROCEEDINGS{CycleGANs, 
+	author={J. Y. Zhu and T. Park and P. Isola and A. A. Efros}, 
+	booktitle={2017 IEEE International Conference on Computer Vision (ICCV)}, 
+	title={Unpaired Image-to-Image Translation Using Cycle-Consistent Adversarial Networks}, 
+	year={2017}, 
+	volume={}, 
+	number={}, 
+	pages={2242-2251}, 
+	keywords={computer vision;learning (artificial intelligence);adversarial loss;collection style transfer;cycle consistency loss;cycle-consistent adversarial networks;graphics problem;image distribution;image pair alignment;inverse mapping;learning;object transfiguration;photo enhancement;unpaired image-to-image translation;vision problem;Extraterrestrial measurements;Graphics;Painting;Semantics;Training;Training data}, 
+	doi={10.1109/ICCV.2017.244}, 
+	ISSN={}, 
+	month={Oct},}
+@article{DiscoGANs,
+	title={Learning to discover cross-domain relations with generative adversarial networks},
+	author={Kim, Taeksoo and Cha, Moonsu and Kim, Hyunsoo and Lee, Jung Kwon and Kim, Jiwon},
+	journal={arXiv preprint arXiv:1703.05192},
+	year={2017}
+}
+@article{outdoor_scene,
+	title={Learning to generate images of outdoor scenes from attributes and semantic layouts},
+	author={Karacan, Levent and Akata, Zeynep and Erdem, Aykut and Erdem, Erkut},
+	journal={arXiv preprint arXiv:1612.00215},
+	year={2016}
+}
+
+%%%%%%%%%%%%%%%%%%%%%% Edge detection %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@InProceedings{HED,
+	author = {"Xie, Saining and Tu, Zhuowen"},
+	Title = {Holistically-Nested Edge Detection},
+	Booktitle = "Proceedings of IEEE International Conference on Computer Vision",
+	Year  = {2015},
+}
+
+%%%%%%%%%%%%%%%%%%%%%% Dataset %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@inproceedings{liu2015faceattributes,
+	author = {Ziwei Liu and Ping Luo and Xiaogang Wang and Xiaoou Tang},
+	title = {Deep Learning Face Attributes in the Wild},
+	booktitle = {Proceedings of International Conference on Computer Vision (ICCV)},
+	month = December,
+	year = {2015} 
+}
+
+@article{ImageNet,
+	Author = {Olga Russakovsky and Jia Deng and Hao Su and Jonathan Krause and Sanjeev Satheesh and Sean Ma and Zhiheng Huang and Andrej Karpathy and Aditya Khosla and Michael Bernstein and Alexander C. Berg and Li Fei-Fei},
+	Title = {{ImageNet Large Scale Visual Recognition Challenge}},
+	Year = {2015},
+	journal   = {International Journal of Computer Vision (IJCV)},
+	doi = {10.1007/s11263-015-0816-y},
+	volume={115},
+	number={3},
+	pages={211-252}
+}
+
+

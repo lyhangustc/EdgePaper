@@ -1,7 +1,7 @@
 \documentclass[format=acmsmall, review=false, screen=true]{acmart}
 
 \usepackage{booktabs} % For formal tables
-
+\usepackage{bm}
 \usepackage[ruled]{algorithm2e} % For algorithms
 \renewcommand{\algorithmcfname}{ALGORITHM}
 \SetAlFnt{\small}
@@ -96,7 +96,7 @@
 %
 \author{Sing Bing Kang}
 \affiliation{%
-	\institution{University of xxxx}
+	\institution{Microsoft}
 	\streetaddress{xx Rd}
 	\city{xxx}
 	\state{xxx}
@@ -106,7 +106,7 @@
 \email{SingBing.Kang@microsoft.com}
 
 \begin{abstract}
-Image-to-image translation, which aims to apply a source image in one domain to generate a corresponding target image in another reserving shared concepts, objects or scenes in these two images, has drawn a lot of interest recently. Models based on deep neural networks have shown to be powerful in generating visually plausible images. However, convolution-based models fail to synthesize some classes with structural constraints. One possible explain is that the convolutional operation has local receptive and require a stack of several convolutional layers to obtain a large receptive field. We propose conditional self-attention generative adversarial networks (CSAGANx) to capture the long-range dependencies and global structure information across images. This model also able to leverage the information of conditional image directly. We demonstrate the effectiveeness of the proposed model with experiments on translating faces of CelebA dataset from the corresponding edge maps. We evaluate the model by two kinds of perceptual user studies and Fr\'echet Inception Distance (FID), and show that this model xxxx.
+Image-to-image translation, which aims to apply a source image in one domain to generate a corresponding target image in another reserving shared concepts, objects or scenes in these two images, has drawn a lot of interest recently. Models based on deep neural networks have shown to be powerful in generating visually plausible images. However, convolution-based models fail to synthesize some classes with structural constraints. One possible explain is that the convolutional operation has a local receptive field and require a stack of several convolutional layers to obtain a large receptive field. We propose conditional self-attention generative adversarial networks (CSAGANs) to capture the long-range dependencies and global structure information across images. This model is also able to leverage the information of conditional image directly. We demonstrate the effectiveness of the proposed model with experiments on translating faces of CelebA dataset from the corresponding edge maps. We evaluate our model by two kinds of perceptual user studies and Fr\'echet Inception Distance (FID), and show that this model xxxx.
 \end{abstract}
 
 
@@ -158,7 +158,7 @@ Image-to-image translation, which aims to apply a source image in one domain to 
 \maketitle
 
 % The default list of authors is too long for headers.
-\renewcommand{\shortauthors}{Y. Li and X. Chen}
+\renewcommand{\shortauthors}{Y. Li et al.}
 
 %\input{samplebody-journals}
 \input{Introduction}
@@ -167,6 +167,8 @@ Image-to-image translation, which aims to apply a source image in one domain to 
 \input{Experiment}
 \input{Conclusion}
 
-
+% Bibliography
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{SCAGANs}
 
 \end{document}
