@@ -1,15 +1,17 @@
 \section{Introduction}
 % emphasize the chanllenges of edge2face!
-Realistic image synthesis has been a hot topic in computer vision and computer graphics for years. Traditional non-parametric methods \cite{EBSR, TextureSyn,SceneCompletion} oftern matching images patch-wisely with a database of existing images. With the emergence of deep neural networks (DNN), several promising DNN-bsed approaches for image synthesis have been proposed. Variational autoencoders (VAEs) \cite{VAEs}, which maximize a variational lower bound on the log-likelihood of the training data, have brought some progress in generating visually plausible images, but the generated samples suffer from being blurry. Autoregressive models \cite{PixelCNN} directly model the conditional distributions over pixels. Though generating convincing samples, these models are costly to sample from.
+Realistic image synthesis has been a hot topic in computer vision and computer graphics for years. 
+Traditional methods \cite{EBSR, TextureSyn,SceneCompletion} establish databases of existing images, and generate images by matching and merging images in the database patch-wisely. 
+With the emergence of deep neural networks (DNN), several promising DNN-bsed approaches for image synthesis have been proposed. 
+Variational autoencoders (VAEs) \cite{VAEs}, which maximize a variational lower bound on the log-likelihood of the training data, have brought some progress in generating visually plausible images, but the generated samples suffer from being blurry. 
+Autoregressive models \cite{PixelCNN} generate image pixel by pixel and are able to generate convincing samples. However, it is computational inefficient to sample images from these models.
 %
 
 Generative adversarial networks (GANs) \cite{GANs} offer a new and promising mechanism to generate images, which take noise vectors as input and train two networks playing minmax game to guide the generated samples to be indistinguishable from the real ones. 
-Conditional GANs are generalized versions of GANs in a conditional setting. Instead of noise vectors, conditional GANs are able to be applied to generate images with a variety of conditions, such as discrete class labels \cite{cGANs}, texts \cite{StackGANs, StackGANs++}, and lower-resolution images \cite{SRGANs, SR_Cascade}. Conditional GANs are trained in a supervised manner and shown to be able to model the conditional distributions with respect to the assigned conditions.
+Conditional GANs, which generate image from assigned conditional information instead of noise vector, are conditional versions of GANs. Conditional GANs are trained in a supervised manner and shown to be powerful in modeling the conditional distributions with respect to the assigned conditions. A variety of conditions have been applied to conditional GANs, such as discrete class labels \cite{cGANs}, texts \cite{StackGANs, StackGANs++}, and images.
 %
-
-%
-Among these conditional image generation methods, image-to-image translation has drawn a lot of attention recently, which aims to apply a source image in one domain to generate a corresponding target image in another, reserving shared concepts, objects or scenes in these two images. Since \cite{pix2pix}  raised the first image-to-image model (pix2pix), there have been many variants of this approach in both supervised and unsupervised manner \cite{CycleGANs, DualGANs,CoupleGANs,BicycleGANs}. 
-However, image-to-image translation models based on convolutional neural networks may have troubles to generate some classes of realistic images, especially when these images have structural constrains. For example, when generating faces from corresponding edge maps (edge-to-face), convolutional-based pix2pix model sometimes fails to render a well-defined part, for example an eye, in the generated image if the conditional edge map do not contain such information. The reasons behind this might be two-folded.
+Among these conditional image generation methods, image-to-image translation has drawn a lot of attention recently, which aims to apply a conditional image in one domain to generate the corresponding target image in another, reserving shared concepts, objects or scenes in these two images. Since the first image-to-image model (pix2pix)  \cite{pix2pix} was proposed, there have been many variants of this approach in both supervised and unsupervised manner \cite{CycleGANs, DualGANs,CoupleGANs,BicycleGANs}. 
+However, the pix2pix model has troubles in some cases of translating face images from the corresponding edge maps. For example, the convolutional-based pix2pix model fails to render a well-defined part, such as an eye, in the generated image if the conditional edge map does not contain such information. The reasons behind this might be two-folded.
 %
 1)Since the convolution operator has a local receptive field depending on the size of its kernels, a large receptive field is achieved by cooperation of several convolution layers. It is hard for the optimizer to discover parameter values that model the long-range dependencies through several convolutional layers \cite{SAGANs}. 
 2) The discriminator used in the pix2pix model \cite{pix2pix} focuses on examining local patches instead of capturing the global information, and therefore fails to guide the generator to synthesize the global structure of the conditional image. 
@@ -29,4 +31,5 @@ ii)
 
 iii)
 
-The rest of this article is organized as follow. Related works are presented in Section \ref{sec:related_work}. The method we proposed is introduced in Section \ref{sec:method}. We demonstrate the effectiveness of method by experiments in Section \ref{sec:experiment}. Section \ref{sec:conclusion} summarizes our conclusions and outlines possible future work.
+The rest of this article is organized as follow. Related works are presented in Section \ref{sec:related_work}. The method we proposed is introduced in Section \ref{sec:method}. We demonstrate the effectiveness of method by experiments in Section \ref{sec:experiment}. Section \ref{sec:conclusion} summarizes our conclusions and outlines 
+possible future work.
