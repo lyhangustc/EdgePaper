@@ -39,7 +39,7 @@ Full model                  | -         | -     | -
 -Spectral Normalization     | -         | -     | core dump, reason unknown
 -Global Discriminator       | -         | -     | training
 -Conditional Connection     | -         | -     | training
-----                        | ----
+----                        | ------    | ---   | ---- 
 CSAM discriminator          | -         | -     | working on code, out of GPU memory
 Resnet pix2pix              | -         | -     | waiting in training list
 Vissulizing attention       | -         | -     | working on code
