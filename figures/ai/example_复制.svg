@@ -3495,7 +3495,7 @@ kMdBvZKZTCYpWRm1ioODA51Or6+v17cgKmNSANKGlU+fPt23b9+sWbNeeukl4mBvb+/Bgwfd3Nzi
 4+PVK5bNZht376Ff/g/brAfnegfRBAAAAABJRU5ErkJggg==" transform="matrix(1.4095 0 0 1.4095 -118.7461 -144.4741)">
 		</image>
 		
-			<rect x="54.538" y="2.114" fill="none" stroke="#FF0000" stroke-width="5" stroke-miterlimit="10" width="97.467" height="60.608"/>
+			<rect x="54.538" y="2.114" fill="none" stroke="#00FFFF" stroke-width="5" stroke-miterlimit="10" width="97.467" height="60.608"/>
 	</g>
 </g>
 <g>
@@ -5255,7 +5255,7 @@ YII=" transform="matrix(1.375 0 0 1.375 224.1636 -139.792)">
 <line fill="none" stroke="#00FF00" stroke-width="5" stroke-miterlimit="10" x1="428.01" y1="169.031" x2="392.746" y2="62.333"/>
 <line fill="none" stroke="#00FF00" stroke-width="5" stroke-miterlimit="10" x1="471.157" y1="169.031" x2="487.827" y2="62.333"/>
 <line fill="none" stroke="#FF0000" stroke-width="5" stroke-miterlimit="10" x1="54.538" y1="62.722" x2="76.711" y2="169.031"/>
-<line fill="none" stroke="#FF0000" stroke-width="5" stroke-miterlimit="10" x1="119.859" y1="169.031" x2="154.824" y2="65.542"/>
+<line fill="none" stroke="#FF0000" stroke-width="5" stroke-miterlimit="10" x1="119.859" y1="169.031" x2="152.005" y2="62.722"/>
 <text transform="matrix(1 0 0 1 7.1152 289.771)" font-family="'TimesNewRomanPSMT'" font-size="24">(a) edge maps</text>
 <text transform="matrix(1 0 0 1 226.1152 289.771)" font-family="'TimesNewRomanPSMT'" font-size="24">(b) GT</text>
 <text transform="matrix(1 0 0 1 370.1152 289.771)" font-family="'TimesNewRomanPSMT'" font-size="24">(c) pix2pix</text>
@@ -8863,4 +8863,6 @@ QmCC" transform="matrix(1.4835 0 0 1.6317 391.1738 -176.8384)">
 <line fill="none" stroke="#0000FF" stroke-width="5" stroke-miterlimit="10" x1="648.526" y1="170.902" x2="676.145" y2="62.333"/>
 <rect x="606.896" y="170.591" fill="none" stroke="#0000FF" stroke-width="5" stroke-miterlimit="10" width="43.147" height="26.83"/>
 <rect x="581.063" y="3.208" fill="none" stroke="#0000FF" stroke-width="5" stroke-miterlimit="10" width="95.081" height="62.334"/>
+<rect x="50.873" fill="none" stroke="#23BF00" stroke-miterlimit="10" width="101.132" height="62.722"/>
+<rect x="53.538" y="2.114" fill="none" stroke="#FF0000" stroke-width="5" stroke-miterlimit="10" width="98.467" height="60.607"/>
 </svg>
