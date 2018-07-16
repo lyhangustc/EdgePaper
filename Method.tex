@@ -9,7 +9,7 @@
 \end{figure}
 %
 % too many "long-range dependencies"
-In this research, we propose Conditional Self-attention Generative Adversarial Networks (CSAGANs), which translate images from one domain to another and are able to capture long-range dependencies and reserve the global structures across image. We first review the pix2pix model as our baseline (Sec.\ref{subsec:pix2pix}). And then we introduce the Conditional Self-attention Module (SCAM) (Sec. \ref{subsec:CSAM}). Finally, we describe the idea of multiple level patch discriminator (Sec.\ref{subsec:disciminator} and the architecture we proposed (Sec. \ref{subsec:architecture}).
+The proposed Conditional Self-attention Generative Adversarial Networks (CSAGANs), which translate images from one domain to another and are able to capture long-range dependencies and reserve the global structures across image. We first review the pix2pix model as our baseline (Sec.\ref{subsec:pix2pix}). And then we introduce the Conditional Self-attention Module (SCAM) (Sec. \ref{subsec:CSAM}). Finally, we describe the idea of multiple level patch discriminator (Sec.\ref{subsec:disciminator} and the architecture we proposed (Sec. \ref{subsec:architecture}).
 \subsection{The Pix2pix Model}
 \label{subsec:pix2pix}
 Since our model is based on the pix2pix model \cite{pix2pix}, we review this model in this sub-section. The pix2pix model is an image-to-image translation framework based on conditional GANs, which trains a generator network $G$ and a discriminator network $D$ alternatively. The generator $G$ takes a conditional image as input and outputs the corresponding target image, while the discriminator $D$ distinguishes real images from the synthesized ones. To train these two networks in a supervise manner, a set of corresponding image pairs $\{(\bm{x}_i, \bm{y}_i)\}$ is required as training set, where $\bm{x}_i$ is a conditional image and $\bm{y}_i$ is the corresponding target image. These two networks play a minmax game to guide the generator to model the conditional distribution of real images given the conditional images. The objective is given by:
@@ -77,7 +77,7 @@ Let $\mathbf{B}\in \mathcal{R}^{N_{\bm{a}}\times N_{\bm{a}}}$ be the attention m
 \label{eqn:beta}
 b_{j,i}=\frac{exp(s_{ij})}{\sum^{N_a}_{i=1}exp(s_{ij})}
 \end{equation}
-where $s_{ij}=f([\bm{a}, \bm{x}_{\bm{a}} ])^Tg([\bm{a}, \bm{x}_{\bm{a}} ])$. Next, we use $b_{j,i}$ as the attention weights and compute the response $\bm{r}=(\bm{r}_1, \bm{r}_2,\dot, \bm{r}_{N_{\bm{a}}})\in \mathbb{R}^{\times N_{\bm{a}}}$ at every position as a weighted sum of the features at all positions, where
+where $s_{ij}=f([\bm{a}, \bm{x}_{\bm{a}} ])^Tg([\bm{a}, \bm{x}_{\bm{a}} ])$. Next, we use $b_{j,i}$ as the attention weights and compute the response $\bm{r}=(\bm{r}_1, \bm{r}_2,\cdots, \bm{r}_{N_{\bm{a}}})\in \mathbb{R}^{C\times N_{\bm{a}}}$ at every position as a weighted sum of the features at all positions, where
 \begin{equation}
 \label{eqn:response}
 \bm{r}_j=\sum^{N_{\bm{a}}}_{i=1}b_{j,i}h([\bm{a}, \bm{x}_{\bm{a}} ]),

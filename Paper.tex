@@ -49,7 +49,7 @@
 % Document starts
 \begin{document}
 % Title portion. Note the short title for running heads
-\title[LineToPhoto]{LineToPhoto: Face Photo Generation From Lines With Conditional Self-Attention Generative Adversarial Networks}
+\title[LinesToFacePhoto]{LinesToFacePhoto: Face Photo Generation From Lines With Conditional Self-Attention Generative Adversarial Networks}
 
 \author{Yuhang Li}
 %\orcid{1234-5678-9012-3456}
@@ -113,14 +113,14 @@
 \begin{abstract}
 We explore the task of generating photo-realistic face images from lines in this paper.
 %a specific version of image-to-image translation which has drawn a lot of interest recently. 
-Previous methods based on conditional generative adversarial networks (CGANs) have shown their power in generating visually plausible images when the input conditional image and the output image share well-aligned structures. 
+Previous methods based on conditional generative adversarial networks (cGANs) have shown their power in generating visually plausible images when the input conditional image and the output image share well-aligned structures. 
 %The previously proposed image-to-image translation model (pix2pix) has shown to be powerful in generating visually plausible images from the conditional images.
 However, this model is not able to synthesize face images with the whole set of well-defined structures, e.g. eyes, noses, mouths, and etc., especially when the conditional line maps lack of one or several parts of the structure. 
 %
 To address this problem, we propose a conditional self-attention generative adversarial network (CSA-GAN) to capture the global structure of faces and long-range dependencies across the entire image. 
 %This model is also able to leverage the information of conditional image directly. 
 We demonstrate the effectiveness of the proposed model with experiments on translating face images of CelebA dataset from the corresponding edge maps. 
-We evaluate our model \red{by two kinds of perceptual user studies and Fr\'echet Inception Distance (FID)}.
+We evaluate our model by two kinds of perceptual user studies and MS-SSIM.
 The experimental results demonstrate that our proposed method generates higher-quality realistic face images from rough lines, and well preserve face structures, comparing to the state-of-the-art methods.
 \end{abstract}
 
@@ -131,34 +131,16 @@ The experimental results demonstrate that our proposed method generates higher-q
 % Please copy and paste the code instead of the example below.
 %
 \begin{CCSXML}
-<ccs2012>
- <concept>
-  <concept_id>10010520.10010553.10010562</concept_id>
-  <concept_desc>Computer systems organization~Embedded systems</concept_desc>
-  <concept_significance>500</concept_significance>
- </concept>
- <concept>
-  <concept_id>10010520.10010575.10010755</concept_id>
-  <concept_desc>Computer systems organization~Redundancy</concept_desc>
-  <concept_significance>300</concept_significance>
- </concept>
- <concept>
-  <concept_id>10010520.10010553.10010554</concept_id>
-  <concept_desc>Computer systems organization~Robotics</concept_desc>
-  <concept_significance>100</concept_significance>
- </concept>
- <concept>
-  <concept_id>10003033.10003083.10003095</concept_id>
-  <concept_desc>Networks~Network reliability</concept_desc>
-  <concept_significance>100</concept_significance>
- </concept>
-</ccs2012>
+	<ccs2012>
+	<concept>
+	<concept_id>10010147.10010257.10010293.10010294</concept_id>
+	<concept_desc>Computing methodologies~Neural networks</concept_desc>
+	<concept_significance>500</concept_significance>
+	</concept>
+	</ccs2012>
 \end{CCSXML}
 
-\ccsdesc[500]{Computer systems organization~Embedded systems}
-\ccsdesc[300]{Computer systems organization~Redundancy}
-\ccsdesc{Computer systems organization~Robotics}
-\ccsdesc[100]{Networks~Network reliability}
+\ccsdesc[500]{Computing methodologies~Neural networks}
 
 %
 % End generated code
