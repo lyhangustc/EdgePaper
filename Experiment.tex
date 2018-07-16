@@ -54,7 +54,7 @@ Two kinds of user studies are performed.The unlimited time user study is designe
 	\centering	
 	\caption{Unlimited time user study.}
 	\begin{tabular}{|l|c|c|}\hline
-		 & pix2pix & ours \\\hline
+		 & pix2pix \cite{pix2pix} & Ours \\\hline
 		user preference&$0.718\%$&$0.282\%$\\\hline
 	\end{tabular}
 	\label{table:unlimited_time}
@@ -69,12 +69,12 @@ Two kinds of user studies are performed.The unlimited time user study is designe
 	\begin{tabular}{|l|c|c|}\hline
 		Images & MS-SSIM \\\hline
 %		Dataset & $0$\\
-		pix2pix & $0.2538$  \\
-		-Distance fields & $0.2878$ \\
+		pix2pix \cite{pix2pix} & $0.2538$  \\
+		Ours w/o distance fields & $0.2878$ \\
 %		-Spectral Normalization & $0$ & $0$\\
-		-Global Discriminator & $0.3196$  \\
-		-Conditional Connection & $0.2778$ \\
-		Full model & $\mathbf{0.3629}$ \\\hline
+		Ours w/o global Discriminator & $0.3196$  \\
+		Ours w/o conditional Connection & $0.2778$ \\
+		Ours, full model  & $\mathbf{0.3629}$ \\\hline
 	\end{tabular}
 	\label{tab:evaluation_metrics}
 \end{table}
@@ -87,7 +87,7 @@ Two kinds of user studies are performed.The unlimited time user study is designe
 \end{figure}
 %
 %
-\subsection{Ablation study}
+\subsection{Ablation Study}
 We examine the importance of every part of our model by MS-SSIM, shown in Table \ref{tab:evaluation_metrics}. Experiments are conducted by remove specific part from the full model and then generate images without this part. Specifically, we remove 1) the calculation of the unsigned distance fields of edge maps before input to the generator and discriminator(-distance fields), 2) the spectral normalization in the CSAMs of generator and convolutional layers of discriminator (-spectral normalization), 3) the global discriminator in the multi-level discriminator (-global discriminator), and 4) the connection in each CSAM of resized images (-conditional connection). 
 %
 \subsection{Self-Attention}
