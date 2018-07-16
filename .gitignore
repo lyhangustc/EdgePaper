@@ -30,4 +30,5 @@ sample-*.pdf
 *.bst
 *.cbx
 *.dbx
+*.pdf
 *~
