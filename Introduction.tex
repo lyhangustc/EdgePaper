@@ -2,7 +2,7 @@
 % emphasize the chanllenges of edge2face!
 Realistic image synthesis has been a hot topic in computer vision and computer graphics for years. 
 Traditional methods \cite{EBSR, TextureSyn,SceneCompletion} establish databases of existing images, and generate images by matching and merging images in the database patch-wisely. 
-With the emergence of deep neural networks (DNN), several promising DNN-bsed approaches for image synthesis have been proposed. 
+With the emergence of deep neural networks (DNN), several promising DNN-based approaches for image synthesis have been proposed. 
 Variational autoencoders (VAEs) \cite{VAEs}, which maximize a variational lower bound on the log-likelihood of the training data, have brought some progress in generating visually plausible images, but the generated samples suffer from being blurry. 
 Autoregressive models \cite{PixelCNN} generate image pixel by pixel and are able to generate convincing samples. However, it is computational inefficient to sample images from these models.
 %
@@ -27,7 +27,7 @@ In this research, we propose Conditional Self-attention Generative Adversarial N
 
 Our contributions are summarized as follow:
 
-i) We firstly introduce the self-attention mechanism to image-to-image translation and propose a novel conditional self-attention generative adversarial networks for the image-to-image translation task. Unlike convolutional-based methods, the proposed model is able to model the long-range dependencies and global structure across images.
+i) We firstly introduce the self-attention mechanism to image-to-image translation and propose a novel conditional self-attention generative adversarial networks for the image-to-image translation task. Unlike convolution-based methods, the proposed model is able to model the long-range dependencies and global structure across images.
 
 ii) We propose a multi-level discriminator to the image-to-image translation. The proposed discriminator is able to capture the global structure information as well as the local realism. 
 
