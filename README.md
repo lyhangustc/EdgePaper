@@ -1,4 +1,4 @@
-# Daily Work Logs
+# Daily Work Logs and Experiment Plans
 
 ### Experiment List
 **Evaluation metirics**
@@ -21,12 +21,12 @@
 
 Experiment                  | MS-SSIM   | FID   | State                             |
 ---------                   | --------- |-------|---------                          |
-Dataset                     | Done         | -     | -                                 |
-pix2pix                     | Done         | -     | -                                 |
-Full model                  | Done         | -     | -                                 |
--Distance fields            | Done         | -     | finish training                   |
--Global Discriminator       | Done         | -     | finish training                   |
--Conditional Connection     | Done         | -     | finish training                   |
+Dataset                     | Done, may discard later | TODO     | Error in computing FID |
+pix2pix                     | Done, may discard later | TODO     | Error in computing FID |
+Full model                  | Done, may discard later | TODO     | Error in computing FID |
+-Distance fields            | Done, may discard later | TODO     | Error in computing FID |
+-Global Discriminator       | Done, may discard later | TODO     | Error in computing FID |
+-Conditional Connection     | Done, may discard later | TODO     | Error in computing FID |
 ---------                   | --------- |-------| ---------                         |
 CSAM discriminator          | -         | -     | working on code, out of GPU memory|
 Resnet pix2pix              | -         | -     | waiting in training list          |
@@ -40,15 +40,21 @@ Test different edge maps    | Done, wait to report              |
 
 ### Known Errors
 - [ ] calutlate FID with the author's code on CelebA dataset: the imagine part is too large when computing coefficient matrix
+- [ ] The MS-SSIM is computed pixel-wisely and may not suitable to evaluate the quality of the resutls.
 
 ## Work logs
-### 2018-9-3
-Test edge maps with different gamma values
+### 2018-9-4
+- [x] Write a htlm web file to display all the results of gamma experiments
+- [x] Add a new subsection in the paper to discuss the gamma experiments
+
+### 2018-8-27~2018-9-3
+- [x] Gamma experiments: Test edge maps with different gamma values
+- [ ] Investigate the latest related paper
 
 ### 2018-7-15~22
-- [ ] move paper to overleaf
-- [ ] contract the author of FID to fix the code of FID
-- [ ] add an experiment: test the model with different kinds of edge maps to show the genralizaiton of the model
+- [x] move paper to overleaf
+- [x] contract the author of FID to fix the code of FID
+- [x] add an experiment: test the model with different kinds of edge maps to show the genralizaiton of the model
 
 skip some logs
 
@@ -56,7 +62,7 @@ skip some logs
 **TODO List**
 
 - [x] make a list of experiment plans
-- [ ] submit experimets to GPU service and record the states
+- [x] submit experimets to GPU service and record the states
 ### 2018-7-12
 **TODO List**
 
