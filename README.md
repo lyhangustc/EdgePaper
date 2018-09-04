@@ -6,7 +6,6 @@
 - [ ] Pix2pix: MS-SSIM, FID
 - [ ] Full model: MS-SSIM, FID
 - [ ] -Distance fields: MS-SSIM, FID
-- [ ] -Spectral Normalization: MS-SSIM, FID
 - [ ] -Global Discriminator: MS-SSIM, FID
 - [ ] -Conditional Connection: MS-SSIM, FID
 
@@ -14,7 +13,7 @@
 - [ ] CSAM discriminator: add CSAMs to discriminator
 - [ ] Resnet pix2pix: increase pix2pix capacity by switch conv_block to res_block
 - [x] Vissulizing attention
-- [ ] Test the trained model with different kinds of edge maps
+- [x] Test the trained model with different kinds of edge maps
 
 
 **Experiment States**
