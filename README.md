@@ -33,7 +33,13 @@ Resnet pix2pix              | -         | -     | waiting in training list      
 Experiment                  | State                             |
 ---------                   |---------                          |
 Vissulizing attention       | Done                              |
-Test different edge maps    | Done, wait to report              |
+Test different edge maps    | Done                              |
+
+Experiment on different dataset
+Dataset                     | State                             |
+---------                   |---------                          |
+Vissulizing attention       | Done                              |
+Test different edge maps    | Done                              |
 
 
 
@@ -42,6 +48,16 @@ Test different edge maps    | Done, wait to report              |
 - [ ] The MS-SSIM is computed pixel-wisely and may not suitable to evaluate the quality of the resutls.
 
 ## Work logs
+### 2018-9-6
+- [x] Set up Caltech-UCSD birds dataset, make tfrecord file with a new cropping method based bounding box
+- [x] Submit experiment on birds dataset
+- [x] Stanford dogs dataset
+- [x] Submit experiment on dogs dataset
+
+### 2018-9-5
+- [x] Read paper: Scribbler: Controlling Deep Image Synthesis with Sketch and Color, CVPR 2017 
+- [x] Read paper: Sparse, Smart Contours to Represent and Edit Images, CVPR 2018
+
 ### 2018-9-4
 - [x] Write a htlm web file to display all the results of gamma experiments
 - [x] Add a new subsection in the paper to discuss the gamma experiments
