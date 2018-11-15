@@ -2,41 +2,34 @@
 
 ### Experiment List
 **Evaluation metirics**
-- [x] Code for calcultating MS-SSIM
-- [ ] Pix2pix: MS-SSIM, FID
-- [ ] Full model: MS-SSIM, FID
-- [ ] -Distance fields: MS-SSIM, FID
-- [ ] -Global Discriminator: MS-SSIM, FID
-- [ ] -Conditional Connection: MS-SSIM, FID
+- [x] MS-SSIM
+- [x] FID
+- [x] KID
 
 **More experiment**
-- [ ] CSAM discriminator: add CSAMs to discriminator
-- [ ] Resnet pix2pix: increase pix2pix capacity by switch conv_block to res_block
+~~- [ ] CSAM discriminator: add CSAMs to discriminator__~~
+~~- [ ] Resnet pix2pix: increase pix2pix capacity by switch conv_block to res_block~~
 - [x] Vissulizing attention
 - [x] Test the trained model with different kinds of edge maps
 
 
 **Experiment States**
 
-Experiment                  | MS-SSIM   | FID   | State                             |
----------                   | --------- |-------|---------                          |
-Dataset                     | Done, may discard later | TODO     | Error in computing FID |
-pix2pix                     | Done, may discard later | TODO     | Error in computing FID |
-Full model                  | Done, may discard later | TODO     | Error in computing FID |
--Distance fields            | Done, may discard later | TODO     | Error in computing FID |
--Global Discriminator       | Done, may discard later | TODO     | Error in computing FID |
--Conditional Connection     | Done, may discard later | TODO     | Error in computing FID |
----------                   | --------- |-------| ---------                         |
-CSAM discriminator          | -         | -     | working on code, out of GPU memory|
-Resnet pix2pix              | -         | -     | waiting in training list          |
+Experiment                  | MS-SSIM                 | FID      | KID  |
+---------                   | ---------               |-------   |------|
+Dataset                     | Done, may discard later | ----     | Done |
+pix2pix                     | Done, may discard later | Done     | Done |
+Full model                  | Done, may discard later | Done     | Done |
+pix2pix with distance field | Done, may discard later | Done     | Done |
+Ours without distance field | Done, may discard later | Done     | Done |
+Rotation                    | ---------               | Out of driver memory | Out of driver memory |
+
+
+---------                   | --------- |-------| ---------     |
+CSAM discriminator          | -         | -     | out of GPU memory|
+Resnet pix2pix              | -         | -     | TODO          |
 
 Experiment                  | State                             |
----------                   |---------                          |
-Vissulizing attention       | Done                              |
-Test different edge maps    | Done                              |
-
-Experiment on different dataset
-Dataset                     | State                             |
 ---------                   |---------                          |
 Vissulizing attention       | Done                              |
 Test different edge maps    | Done                              |
@@ -44,10 +37,15 @@ Test different edge maps    | Done                              |
 
 
 ### Known Errors
-- [ ] calutlate FID with the author's code on CelebA dataset: the imagine part is too large when computing coefficient matrix
-- [ ] The MS-SSIM is computed pixel-wisely and may not suitable to evaluate the quality of the resutls.
+~~- [ ] calutlate FID with the author's code on CelebA dataset: the imagine part is too large when computing coefficient matrix~~
+- [x] The MS-SSIM is computed pixel-wisely and may not suitable to evaluate the quality of the resutls.
 
 ## Work logs
+### 2018-11-15
+- [x] Paper reading: BigGAN, see /PaperReading for details.
+- [ ] Related papers collection.
+- [x] Code of IPGAN, submitted.
+
 ### 2018-9-6
 - [x] Set up Caltech-UCSD birds dataset, make tfrecord file with a new cropping method based bounding box
 - [x] Submit experiment on birds dataset
