@@ -23,8 +23,6 @@ Full model                  | Done, may discard later | Done     | Done |
 pix2pix with distance field | Done, may discard later | Done     | Done |
 Ours without distance field | Done, may discard later | Done     | Done |
 Rotation                    | ---------               | Out of driver memory | Out of driver memory |
-
-
 ---------                   | --------- |-------| ---------     |
 CSAM discriminator          | -         | -     | out of GPU memory|
 Resnet pix2pix              | -         | -     | TODO          |
