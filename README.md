@@ -39,6 +39,13 @@ Test different edge maps    | Done                              |
 - [x] The MS-SSIM is computed pixel-wisely and may not suitable to evaluate the quality of the resutls.
 
 ## Work logs
+### 2018-11-16
+- [x] Add techniques of BigGAN to our code:
+      - [x] Orthogonal Regularization
+      - [x] Improved spetral normalization
+- [x] Add techniques of examing GANs:
+      - [ ] Weight, gradients, and loss stats
+
 ### 2018-11-15
 - [x] Paper reading: BigGAN, see /PaperReading for details.
 - [ ] Related papers collection.
