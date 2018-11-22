@@ -41,6 +41,7 @@ Test different edge maps    | Done                              |
 ## Work logs
 ### 2018-11-21
 - [x] Calculate FID/KID of rotated face images, submitted.
+- [x] Download and pre-process MS-Celeb-1M face dataset.
 ### 2018-11-20
 - [ ] Debug code of IPGAN
 - [x] Paper reading: Is Generator Conditioning Causally Related to GAN Performance
