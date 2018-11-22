@@ -38,9 +38,17 @@ Test different edge maps    | Done                              |
 ~~- [ ] calutlate FID with the author's code on CelebA dataset: the imagine part is too large when computing coefficient matrix~~
 - [x] The MS-SSIM is computed pixel-wisely and may not suitable to evaluate the quality of the resutls.
 
+## TODO List
+- [ ] [Expriment] Calculate FID/KID of rotated face images: submitted
+- [ ] [Code] Caculate stat of weights, gradients and loss: todo
+- [ ] [Code] Make every componennt of networks be optional: doing
+- [ ] [Data] Find out the problem in TFRecord file of the CelebA test data: todo
+- [ ] [Data] Make TFRecord file of MS-Celeb-1M dataset: todo
+- [ ] [Data] Clean MS-Celeb-1M dataset: todo
+- [ ] [Learn] Singular value
 ## Work logs
 ### 2018-11-22
-- [ ]  Understand the singular value
+- [ ]  Understand the singular value, add to TODO list
 
 ### 2018-11-21
 - [x] Calculate FID/KID of rotated face images, submitted.
@@ -52,10 +60,12 @@ Test different edge maps    | Done                              |
 - [ ] Debug code of IPGAN
 ### 2018-11-16
 - [x] Add techniques of BigGAN to our code:
-      - [x] Orthogonal Regularization
-      - [x] Improved spetral normalization
+
+     - [x] Orthogonal Regularization
+     - [x] Improved spetral normalization
 - [x] Add techniques of examing GANs:
-      - [ ] Weight, gradients, and loss stats
+     
+     - [ ] Weight, gradients, and loss stats
 
 ### 2018-11-15
 - [x] Paper reading: BigGAN, see /PaperReading for details.
