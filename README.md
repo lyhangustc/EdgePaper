@@ -39,6 +39,9 @@ Test different edge maps    | Done                              |
 - [x] The MS-SSIM is computed pixel-wisely and may not suitable to evaluate the quality of the resutls.
 
 ## Work logs
+### 2018-11-22
+- [ ]  Understand the singular value
+
 ### 2018-11-21
 - [x] Calculate FID/KID of rotated face images, submitted.
 - [x] Download and pre-process MS-Celeb-1M face dataset.
