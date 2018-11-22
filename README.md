@@ -39,6 +39,13 @@ Test different edge maps    | Done                              |
 - [x] The MS-SSIM is computed pixel-wisely and may not suitable to evaluate the quality of the resutls.
 
 ## Work logs
+### 2018-11-21
+- [x] Calculate IS/FID/KID of rotated face images, submitted.
+### 2018-11-20
+- [ ] Debug code of IPGAN
+- [x] Paper reading: Is Generator Conditioning Causally Related to GAN Performance
+### 2018-11-19
+- [ ] Debug code of IPGAN
 ### 2018-11-16
 - [x] Add techniques of BigGAN to our code:
       - [x] Orthogonal Regularization
